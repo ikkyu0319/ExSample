@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androidex" >
+
+    <application>
+        <activity
+            android:name=".activity.ExActivity"
+            android:label="@string/title_activity_ex" >
+        </activity>
+        <activity
+            android:name=".activity.Main2Activity"
+            android:label="@string/title_activity_main2" >
+        </activity>
+    </application>
+
+</manifest>
