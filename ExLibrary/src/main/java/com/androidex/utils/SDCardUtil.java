@@ -8,10 +8,10 @@ import java.io.File;
 /**
  * SDCard
  */
-public class SDCardUtils {
+public class SDCardUtil {
 
 
-    private SDCardUtils() {
+    private SDCardUtil() {
         /** cannot be instantiated **/
         throw new UnsupportedOperationException("cannot be instantiated");
     }

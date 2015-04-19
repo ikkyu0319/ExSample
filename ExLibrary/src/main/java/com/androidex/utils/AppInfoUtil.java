@@ -122,34 +122,7 @@ public class AppInfoUtil {
         return Runtime.getRuntime().maxMemory();
     }
 
-    /**
-     * 获取手机的IMEI
-     *
-     * @return
-     */
-    public static String getIMEI() {
 
-        String imei = "";
-        try {
-
-            Context ctx = ExApplication.getContext();
-            TelephonyManager telephonyManager = (TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
-            if (telephonyManager != null) {
-
-                imei = telephonyManager.getDeviceId();
-                if (TextUtils.isEmpty(imei))
-                    imei = Settings.Secure.getString(ctx.getContentResolver(), Settings.Secure.ANDROID_ID);
-
-                if (imei == null)
-                    imei = "";
-            }
-
-        } catch (Exception e) {
-
-        }
-
-        return imei;
-    }
 
     /**
      * 获取应用第一次安装时间
@@ -199,6 +172,10 @@ public class AppInfoUtil {
     }
 
 
+    /**
+     * need < uses-permission android:name =“android.permission.GET_TASKS” />
+     * 判断是否前台运行
+     */
     public static boolean isForeGround(Context context) {
 
         try {
@@ -220,4 +197,6 @@ public class AppInfoUtil {
         }
         return false;
     }
+
+
 }

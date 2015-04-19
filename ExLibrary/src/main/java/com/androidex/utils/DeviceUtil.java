@@ -1,64 +1,83 @@
 package com.androidex.utils;
 
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
+import android.text.*;
 
 import com.androidex.context.ExApplication;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
+
+
+/**
+ * 设备信息
+ */
 public class DeviceUtil {
 
+    /**
+     * 判断是否有电话功能
+     *
+     * @return true:有电话功能
+     * false:没有电话功能
+     */
+    public static boolean hasPhone() {
 
+        TelephonyManager telephony = (TelephonyManager) ExApplication.getContext().
+                getSystemService(Context.TELEPHONY_SERVICE);
+        return telephony.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE ? false : true;
+    }
 
-	public static boolean hasApp(String packageName) {
+    /**
+     * 获取手机的IMEI
+     *
+     * @return
+     */
+    public static String getIMEI() {
 
-		if(packageName == null || packageName.length() == 0)
-			return false;
+        String imei = "";
+        try {
+            Context ctx = ExApplication.getContext();
+            TelephonyManager telephonyManager = (TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
+            if (telephonyManager != null) {
 
-		PackageInfo packageInfo = null;
-		try {
+                imei = telephonyManager.getDeviceId();
+                if (android.text.TextUtils.isEmpty(imei))
+                    imei = Settings.Secure.getString(ctx.getContentResolver(), Settings.Secure.ANDROID_ID);
 
-			packageInfo = ExApplication.getContext().getPackageManager().getPackageInfo(packageName, 0);
+                if (imei == null)
+                    imei = "";
+            }
 
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-		return packageInfo == null ? false : true;
-	}
+        return imei;
+    }
 
-
-
-
-
-	public static boolean hasSinaWeiboClient() {
-		try {
-
-			PackageInfo packageInfo = ExApplication.getContext().getPackageManager().getPackageInfo("com.sina.weibo", 0);
-			if (packageInfo == null)
-				return false;
-
-			int highBit = packageInfo.versionName.charAt(0);
-			return highBit > 50 ? true : false;// 50 = 2
-
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-
-	/**
-	 * 判断是否有电话功能
-	 * @return
-	 * true:有电话功能
-	 * false:没有电话功能
-	 */
-	public static boolean hasPhone() {
-
-		TelephonyManager telephony = (TelephonyManager) ExApplication.getContext().
-														getSystemService(Context.TELEPHONY_SERVICE);
-		return telephony.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE ? false : true;
-	}
+    /**
+     * 获取手机IP地址
+     *
+     * @return
+     */
+    private String getPhoneIP() {
+        try {
+            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
+                NetworkInterface intf = en.nextElement();
+                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
+                    InetAddress inetAddress = enumIpAddr.nextElement();
+                    if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
+                        return inetAddress.getHostAddress().toString();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 }

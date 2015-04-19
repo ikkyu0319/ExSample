@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * MD5加密帮助类
  */
-public class MD5Utils {
+public class MD5Util {
 
     private char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
             '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -25,14 +25,14 @@ public class MD5Utils {
         }
     }
 
-    private static MD5Utils self = null;
+    private static MD5Util self = null;
 
-    private MD5Utils() {
+    private MD5Util() {
     }
 
-    public static MD5Utils getInstance() {
+    public static MD5Util getInstance() {
         if (self == null) {
-            self = new MD5Utils();
+            self = new MD5Util();
         }
         return self;
     }

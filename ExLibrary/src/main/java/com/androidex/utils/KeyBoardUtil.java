@@ -7,7 +7,7 @@ import android.widget.EditText;
 /**
  * 打开或关闭软键盘
  */
-public class KeyBoardUtils {
+public class KeyBoardUtil {
     /**
      * 打卡软键盘
      *

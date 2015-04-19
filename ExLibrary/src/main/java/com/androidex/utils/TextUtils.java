@@ -8,9 +8,8 @@ import java.util.regex.Pattern;
 /**
  *字符串帮助类
  */
-public class TextUtil {
+public class TextUtils {
 
-    public static final String TEXT_EMPTY = "";
 
     /**
      * 判断字符串为空

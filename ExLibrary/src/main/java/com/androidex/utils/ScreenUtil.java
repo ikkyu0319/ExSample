@@ -15,10 +15,10 @@ import com.androidex.context.ExApplication;
  *
  * @author zhy
  */
-public class ScreenUtils {
+public class ScreenUtil {
 
     
-    private ScreenUtils() {
+    private ScreenUtil() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

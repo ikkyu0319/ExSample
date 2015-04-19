@@ -17,9 +17,9 @@ import java.util.Enumeration;
 /**
  * 判断网络状态
  */
-public class NetUtils {
+public class NetUtil {
 
-    private NetUtils() {
+    private NetUtil() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
@@ -79,28 +79,6 @@ public class NetUtils {
         activity.startActivityForResult(intent, 0);
     }
 
-
-    /**
-     * 获取手机IP地址
-     *
-     * @return
-     */
-    private String getPhoneIP() {
-        try {
-            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
-                NetworkInterface intf = en.nextElement();
-                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements(); ) {
-                    InetAddress inetAddress = enumIpAddr.nextElement();
-                    if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
-                        return inetAddress.getHostAddress().toString();
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
 
 
 }

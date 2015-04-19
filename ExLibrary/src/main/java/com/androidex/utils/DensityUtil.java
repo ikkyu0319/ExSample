@@ -7,10 +7,10 @@ import com.androidex.context.ExApplication;
 /**
  * 常用单位转换的辅助类
  */
-public class DensityUtils {
+public class DensityUtil {
 
 
-    private DensityUtils() {
+    private DensityUtil() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
