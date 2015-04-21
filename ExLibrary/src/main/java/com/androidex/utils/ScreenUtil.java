@@ -12,15 +12,44 @@ import com.androidex.context.ExApplication;
 
 /**
  * 获得屏幕相关的辅助类
- *
- * @author zhy
  */
 public class ScreenUtil {
 
-    
+    private static final String TAG = ScreenUtil.class.getSimpleName();
+
     private ScreenUtil() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
+
+
+    /**
+     * 获取 显示信息
+     */
+    public static DisplayMetrics getDisplayMetrics() {
+        DisplayMetrics dm = ExApplication.getContext().getResources().getDisplayMetrics();
+        return dm;
+    }
+
+    /**
+     * 打印 显示信息
+     */
+    public static DisplayMetrics printDisplayInfo() {
+        DisplayMetrics dm = getDisplayMetrics();
+        if (LogA.isDebug()) {
+            StringBuilder sb = new StringBuilder();
+            sb.append("_______  显示信息:  ");
+            sb.append("\ndensity         :").append(dm.density);
+            sb.append("\ndensityDpi      :").append(dm.densityDpi);
+            sb.append("\nheightPixels    :").append(dm.heightPixels);
+            sb.append("\nwidthPixels     :").append(dm.widthPixels);
+            sb.append("\nscaledDensity   :").append(dm.scaledDensity);
+            sb.append("\nxdpi            :").append(dm.xdpi);
+            sb.append("\nydpi            :").append(dm.ydpi);
+            LogA.i(TAG, sb.toString());
+        }
+        return dm;
+    }
+
 
     /**
      * 获得屏幕高度
