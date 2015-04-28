@@ -382,6 +382,8 @@ public class GsonUtil {
         return fromJson(json, clazz, null);
     }
 
+
+
     public static boolean isEmpty(String inStr) {
         boolean reTag = false;
         if (inStr == null || "".equals(inStr)) {
