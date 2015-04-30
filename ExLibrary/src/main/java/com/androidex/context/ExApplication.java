@@ -8,48 +8,45 @@ import android.content.res.Resources;
 import java.io.File;
 
 /**
- * 有问题，获取不到上下文
- * 
- * @author zhixing.lan
- * 
+ * @author Tom
  */
 public class ExApplication extends Application {
 
-	private static Context mContext = null;
+    private static Context mContext = null;
 
-	@Override
-	public void onCreate() {
+    @Override
+    public void onCreate() {
 
-		super.onCreate();
-		mContext = getApplicationContext();
-	}
+        super.onCreate();
+        mContext = getApplicationContext();
+    }
 
-	public static Context getContext() {
+    public static Context getContext() {
 
-		return mContext;
-	}
+        return mContext;
+    }
 
-	public static Resources getExResources() {
+    public static Resources getExResources() {
 
-		return mContext.getResources();
-	}
+        return mContext.getResources();
+    }
 
-	public static ContentResolver getExContentResolver() {
+    public static ContentResolver getExContentResolver() {
 
-		return mContext.getContentResolver();
-	}
+        return mContext.getContentResolver();
+    }
 
-	public static File getAppCacheDir() {
+    public static File getAppCacheDir() {
 
-		return mContext.getCacheDir();
-	}
+        return mContext.getCacheDir();
+    }
 
-	public static File getAppCacheSubDir(String subDirName) {
+    public static File getAppCacheSubDir(String subDirName) {
 
-		File subDir = new File(getAppCacheDir(), subDirName);
-		if (!subDir.exists())
-			subDir.mkdirs();
+        File subDir = new File(getAppCacheDir(), subDirName);
+        if (!subDir.exists())
+            subDir.mkdirs();
 
-		return subDir;
-	}
+        return subDir;
+    }
 }
