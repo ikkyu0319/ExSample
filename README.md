@@ -19,7 +19,7 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 
 网络请求： Volley + OkHttp
 
-图片处理：freso  or ImageLoader
+图片处理：freso  or ImageLoader or picasso
 
 图片放大处理：PhotoView
 

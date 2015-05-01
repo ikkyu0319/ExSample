@@ -12,8 +12,7 @@ dependencies {
     compile 'com.alibaba:fastjson:1.2.5'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'de.greenrobot:eventbus:2.4.0'
-
-
+    compile 'com.squareup.picasso:picasso:2.3.2'
 }
 
 

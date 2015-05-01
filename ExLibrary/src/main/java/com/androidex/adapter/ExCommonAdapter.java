@@ -10,7 +10,6 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * @author Tom
  * @Description 通用的Adapter，能满足大多简单的Listview适配，简化Code
  */
 public abstract class ExCommonAdapter<T> extends BaseAdapter {
