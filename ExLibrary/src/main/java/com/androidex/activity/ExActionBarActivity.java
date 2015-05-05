@@ -31,6 +31,12 @@ public class ExActionBarActivity extends ActionBarActivity {
     super.setContentView(view, params);
   }
 
+
+
+
+
+
+
   /**
    * ++++++++++++++++++++++++++fragment activity part++++++++++++++++++++++++++
    */
