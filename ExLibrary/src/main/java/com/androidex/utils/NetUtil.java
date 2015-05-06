@@ -24,13 +24,20 @@ public class NetUtil {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-
+    /**
+     * 网络正常
+     * @return
+     */
     public static boolean isNetworkEnable() {
         ConnectivityManager conManager = (ConnectivityManager) ExApplication.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = conManager.getActiveNetworkInfo();
         return networkInfo != null && networkInfo.isAvailable();
     }
 
+    /**
+     * 没连上网络
+     * @return
+     */
     public static boolean isNetworkDisable() {
         ConnectivityManager conManager = (ConnectivityManager) ExApplication.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = conManager.getActiveNetworkInfo();

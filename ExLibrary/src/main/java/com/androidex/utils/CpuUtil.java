@@ -22,6 +22,7 @@ public class CpuUtil {
 
     /**
      * 打印 CPU 相关信息
+     * @return
      */
     public static String printCpuInfo() {
         String info = FileUtil.getFileOutputString(CPU_INFO_PATH);
@@ -33,6 +34,7 @@ public class CpuUtil {
 
     /**
      * 获取 处理器 核数
+     * @return
      */
     public static int getProcessorsCount() {
         return Runtime.getRuntime().availableProcessors();
@@ -40,6 +42,7 @@ public class CpuUtil {
 
     /**
      * 获取CPU名字
+     * @return
      */
     public static String getCpuName() {
         try {
@@ -61,6 +64,7 @@ public class CpuUtil {
 
     /**
      * 实时获取CPU当前频率
+     * @return
      */
     public static long getCurrentFreq() {
         try {
@@ -73,6 +77,7 @@ public class CpuUtil {
 
     /**
      * 获取CPU最大频率
+     * @return
      */
     public static long getMaxFreq() {
         try {
@@ -85,6 +90,7 @@ public class CpuUtil {
 
     /**
      * 获取CPU最小频率
+     * @return
      */
     public static long getMinFreq() {
         try {
@@ -97,6 +103,7 @@ public class CpuUtil {
 
     /**
      * 读取指定命令的输出
+     * @return
      */
     public static String getCMDOutputString(String[] args) {
         try {
