@@ -5,6 +5,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 import java.io.File;
 
 /**
@@ -14,11 +16,19 @@ public class ExApplication extends Application {
 
     private static Context mContext = null;
 
+    public static RefWatcher getRefWatcher(Context context) {
+        ExApplication application = (ExApplication) context.getApplicationContext();
+        return application.refWatcher;
+    }
+
+    private RefWatcher refWatcher;
+
     @Override
     public void onCreate() {
 
         super.onCreate();
         mContext = getApplicationContext();
+        LeakCanary.install(this);
     }
 
     public static Context getContext() {
