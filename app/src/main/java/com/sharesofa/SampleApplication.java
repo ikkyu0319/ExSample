@@ -1,13 +1,13 @@
 package com.sharesofa;
 
+import android.app.Application;
 import android.content.res.Configuration;
 
-import com.androidex.context.ExApplication;
 
 /**
  * Created by tom on 15/5/16.
  */
-public class SampleApplication extends ExApplication {
+public class SampleApplication extends Application {
 
 
     @Override public void onCreate() {
