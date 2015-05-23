@@ -90,28 +90,43 @@ Json解析 ：
 
 
 <https://github.com/chrisbanes/Android-PullToRefresh>
-<https://github.com/chrisbanes/ActionBar-PullToRefresh>
-<https://github.com/daimajia/AndroidSwipeLayout>
-![icon](https://camo.githubusercontent.com/878e29e5defd2c64db4a5ec93119e133cab00807/687474703a2f2f7777322e73696e61696d672e636e2f6d773639302f36313064633033346a7731656a6f706c6170777471673230386e3065373464782e676966)
-<https://github.com/pedant/sweet-alert-dialog>
-![Icon](https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif)
-<https://github.com/Quinny898/PersistentSearch>
-![icon](https://raw.githubusercontent.com/Quinny898/PersistentSearch/master/resources/search.gif)
-<https://github.com/Yalantis/Taurus>
-![icon](https://camo.githubusercontent.com/3a24e22eb3f8338573dba0701c089c12f6b70f11/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313632333133312f746f7572732d70756c6c2d616972706c616e655f322d322d332e676966)
-<https://github.com/alexvasilkov/FoldableLayout>
-[![Demo video](http://img.youtube.com/vi/-_QcWMh-O5g/0.jpg)](http://www.youtube.com/watch?v=-_QcWMh-O5g)
-<https://github.com/frogermcs/InstaMaterial>
 
+<https://github.com/chrisbanes/ActionBar-PullToRefresh>
+
+<https://github.com/daimajia/AndroidSwipeLayout>
+
+![icon](https://camo.githubusercontent.com/878e29e5defd2c64db4a5ec93119e133cab00807/687474703a2f2f7777322e73696e61696d672e636e2f6d773639302f36313064633033346a7731656a6f706c6170777471673230386e3065373464782e676966)
+
+<https://github.com/pedant/sweet-alert-dialog>
+
+![Icon](https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif)
+
+<https://github.com/Quinny898/PersistentSearch>
+
+![icon](https://raw.githubusercontent.com/Quinny898/PersistentSearch/master/resources/search.gif)
+
+<https://github.com/Yalantis/Taurus>
+
+![icon](https://camo.githubusercontent.com/3a24e22eb3f8338573dba0701c089c12f6b70f11/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313632333133312f746f7572732d70756c6c2d616972706c616e655f322d322d332e676966)
+
+<https://github.com/alexvasilkov/FoldableLayout>
+
+[![Demo video](http://img.youtube.com/vi/-_QcWMh-O5g/0.jpg)](http://www.youtube.com/watch?v=-_QcWMh-O5g)
+	
 Material Design Instagram <https://github.com/frogermcs/InstaMaterial>
+
 [![App showcase](http://img.youtube.com/vi/VpLP__Vupxw/0.jpg)](http://www.youtube.com/watch?v=VpLP__Vupxw)
 
 <https://github.com/Yalantis/Euclid>
+
 ![icon](https://camo.githubusercontent.com/b01a910b14ef3573c9e75ce150ef76e155cbbe98/68747470733a2f2f6431337961637572716a676172612e636c6f756466726f6e742e6e65742f75736572732f3132353035362f73637265656e73686f74732f313734343135372f39396d696c65732d7573657270726f66696c652d616e696d6174696f6e5f312d312d332e676966)
+
 自定义字体<https://github.com/norbsoft/android-typeface-helper>
+
 ![icon](https://camo.githubusercontent.com/b8e7d4f4ab84ff96a3919ea264e2a83aca46e04e/68747470733a2f2f7261772e6769746875622e636f6d2f6e6f7262736f66742f616e64726f69642d74797065666163652d68656c7065722f6d61737465722f726561646d655f73637265656e2e706e67)
 
 GoogleMusic <https://github.com/googlesamples/android-UniversalMusicPlayer>
+
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone.png)
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone_lockscreen.png)
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone_lockscreen.png)
