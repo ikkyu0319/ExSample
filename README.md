@@ -3,7 +3,7 @@ ExLibrary's Sample~
 
 ##项目架构
 
-采用全新的架构MVP模式，降低耦合度
+采用全新的架构[MVP模式](https://github.com/bboyfeiyu/android-tech-frontier/tree/master/androidweekly/%E4%B8%80%E7%A7%8D%E5%9C%A8android%E4%B8%AD%E5%AE%9E%E7%8E%B0MVP%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B0%E6%80%9D%E8%B7%AF)，降低耦合度
 
     优点：
      1. 降低耦合度
@@ -32,6 +32,7 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 图片处理：
    
    * freso <https://github.com/facebook/fresco>
+   * Glide <https://github.com/bboyfeiyu/android-tech-frontier/tree/master/others/Google%E6%8E%A8%E8%8D%90%E7%9A%84%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%BA%93Glide%E4%BB%8B%E7%BB%8D>
    * picasso <http://square.github.io/picasso/>
    * Android-Universal-Image-Loader <https://github.com/nostra13/Android-Universal-Image-Loader>
    * RoundedImageView[圆角处理] <https://github.com/vinc3m1/RoundedImageView>
@@ -98,6 +99,32 @@ Json解析 ：
 
 <https://github.com/chrisbanes/ActionBar-PullToRefresh>
 
+MVP模式 <https://github.com/richardradics/MVPAndroidBootstrap>
+
+CommonAdapter通用的Adapter <https://github.com/tianzhijiexian/CommonAdapter>
+
+自定义Dialog <https://github.com/orhanobut/dialogplus>
+
+![dialogPlus](https://github.com/nr4bt/dialogplus/raw/master/images/dialogplus.gif)
+
+相册图片单选，多选模式 <https://github.com/wqandroid/wqgallery>
+
+![icon](https://github.com/wqandroid/wqgallery/raw/master/app/screenshort/wqgallert1.gif)
+
+
+
+自定义图片形状 <https://github.com/siyamed/android-shape-imageview>
+
+![icon](https://github.com/ShareSofa/android-shape-imageview/raw/master/images/all-samples.png)
+
+
+
+
+Fragment 动画 <https://github.com/DesarrolloAntonio/FragmentTransactionExtended>
+
+![icon](https://github.com/DesarrolloAntonio/FragmentTransactionExtended/raw/master/fragmentTransactionExample/cap2.gif)
+
+
 <https://github.com/daimajia/AndroidSwipeLayout>
 
 ![icon](https://camo.githubusercontent.com/878e29e5defd2c64db4a5ec93119e133cab00807/687474703a2f2f7777322e73696e61696d672e636e2f6d773639302f36313064633033346a7731656a6f706c6170777471673230386e3065373464782e676966)
@@ -136,6 +163,13 @@ GoogleMusic <https://github.com/googlesamples/android-UniversalMusicPlayer>
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone_lockscreen.png)
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/phone_lockscreen.png)
 ![icon](https://github.com/googlesamples/android-UniversalMusicPlayer/raw/master/screenshots/android_auto.png)
+
+Airbnb提供的地图解决方案，支持多个本地地图提供者包括谷歌地图V2和亚马逊地图V2。如果设备没有任何受支持的本地地图提供者,AirMapView会回退到基于web的地图提供者(目前谷歌地图) <https://github.com/airbnb/AirMapView>
+
+![icon](https://github.com/airbnb/AirMapView/raw/master/screenshots/google_maps_v2.png)
+
+
+![icon](https://github.com/airbnb/AirMapView/raw/master/screenshots/google_web_maps.png)
 
 
 

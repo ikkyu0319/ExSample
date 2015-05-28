@@ -27,7 +27,7 @@ public class FastJsonUtil {
      * 将Json字符串解析成对应的ArrayList<T>集合
      *
      * @param jsonStr 需要解析的Json字符串
-     * @param mClass   需要解析成的Java对象类型
+     * @param mClass  需要解析成的Java对象类型
      * @return mlList 解析后的ArrayList<T>集合
      */
     public static <T> ArrayList<T> fastJsonToListObjectOrString(String jsonStr, Class<T> mClass) {
@@ -38,8 +38,8 @@ public class FastJsonUtil {
     /**
      * 将Json字符串解析成对应的ArrayList<Map<String,T>>集合
      *
-     * @param jsonStr 需要解析的Json字符串
-     * @param mTypeReference   需要解析成的Java对象类型
+     * @param jsonStr        需要解析的Json字符串
+     * @param mTypeReference 需要解析成的Java对象类型
      * @return mapsList 解析后的ArrayList<Map<String,T>>集合
      */
     public static <T> ArrayList<Map<String, T>> fastJsonGetListMapObject(String jsonStr, TypeReference<T> mTypeReference) {
