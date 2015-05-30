@@ -32,7 +32,8 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 图片处理：
    
    * freso <https://github.com/facebook/fresco>
-   * Glide <https://github.com/bboyfeiyu/android-tech-frontier/tree/master/others/Google%E6%8E%A8%E8%8D%90%E7%9A%84%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%BA%93Glide%E4%BB%8B%E7%BB%8D>
+   * Glide <https://github.com/bumptech/glide> 
+   **[Glide和Picasso的比较](https://github.com/bboyfeiyu/android-tech-frontier/tree/master/others/Google%E6%8E%A8%E8%8D%90%E7%9A%84%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E5%BA%93Glide%E4%BB%8B%E7%BB%8D)**
    * picasso <http://square.github.io/picasso/>
    * Android-Universal-Image-Loader <https://github.com/nostra13/Android-Universal-Image-Loader>
    * RoundedImageView[圆角处理] <https://github.com/vinc3m1/RoundedImageView>
