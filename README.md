@@ -59,7 +59,9 @@ Json解析 ：
   
    * NineOldAndroids <http://nineoldandroids.com/>
 
+多点下载：
 
+   * MultiThreadDownloader <https://github.com/AigeStudio/MultiThreadDownloader>
 
 其它：
 
