@@ -1,11 +1,15 @@
 package com.androidex.utils;
 
+import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.androidex.context.ExApplication;
 
@@ -14,6 +18,49 @@ import com.androidex.context.ExApplication;
  * 视图帮助类
  */
 public class ViewUtil {
+
+    /**
+     * 获取ListView，该ListView对公共的样式做了清除
+     *
+     * @param context
+     * @return
+     */
+    public static ListView getCleanListView(Context context, int id) {
+
+        ListView lv = new ListView(context);
+        lv.setId(id);
+        lv.setDividerHeight(0);
+        lv.setDivider(null);
+        lv.setFadingEdgeLength(0);
+        lv.setFooterDividersEnabled(false);
+        lv.setHeaderDividersEnabled(false);
+        lv.setSelector(new ColorDrawable(0X00000000));
+        lv.setScrollingCacheEnabled(false);
+        return lv;
+    }
+
+    /**
+     * 获取ExpandListView，该ListView对公共的样式做了清除
+     *
+     * @param context
+     * @return
+     */
+    public static ExpandableListView getCleanExpandListView(Context context, int id) {
+
+        ExpandableListView elv = new ExpandableListView(context);
+        elv.setId(id);
+        elv.setDividerHeight(0);
+        elv.setDivider(null);
+        elv.setFadingEdgeLength(0);
+        elv.setFooterDividersEnabled(false);
+        elv.setHeaderDividersEnabled(false);
+        elv.setChildDivider(null);
+        elv.setSelector(new ColorDrawable(0X00000000));
+        elv.setScrollingCacheEnabled(false);
+        elv.setChildIndicator(null);
+        elv.setGroupIndicator(null);
+        return elv;
+    }
 
 
     /**

@@ -2,7 +2,22 @@
 <resources>
 
     <declare-styleable name="ExDecorView">
-        <attr name="titleFloat" format="boolean" />
+        <attr name="exBackground" format="reference|color"/>
+        <attr name="exTitleNone" format="boolean"/>
+        <attr name="exTitleFloat" format="boolean" />
+        <attr name="exTitleAndroidStyle" format="boolean"/>
+        <attr name="exTitleFloatContentTopMargin" format="dimension"/>
+        <attr name="exTitleHeight" format="dimension" />
+        <attr name="exTitleBackground" format="reference|color"/>
+        <attr name="exTitleTextColor" format="reference|color"/><!-- 文字颜色支持@color/xxx和#argb, 不支持@color/colorStateList，可通过代码来支持 -->
+        <attr name="exTitleTextSize" format="dimension"/>
+        <attr name="exTitleTextBold" format="boolean"/>
+        <attr name="exTitleMainTextSize" format="dimension"/>
+        <attr name="exTitleSubTextSize" format="dimension"/>
+        <attr name="exTitleClickerBackground" format="reference|color"/>
+        <attr name="exTitleClickerTextSize" format="dimension"/>
+        <attr name="exTitleBackIcon" format="reference"/>
+        <attr name="exTitleClickerHoriPadding" format="dimension"/>
     </declare-styleable>
     
     <declare-styleable name="LinearListView">

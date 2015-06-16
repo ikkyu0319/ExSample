@@ -10,7 +10,9 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * @Description 通用的Adapter，能满足大多简单的Listview适配，简化Code
+ * 通用的Adapter，能满足大多简单的Listview适配，简化Code
+ *
+ * @author tom
  */
 public abstract class ExCommonAdapter<T> extends BaseAdapter {
 
@@ -87,9 +89,9 @@ public abstract class ExCommonAdapter<T> extends BaseAdapter {
         }
     }
 
-    public void clear(){
+    public void clear() {
 
-        if(mDatas != null){
+        if (mDatas != null) {
             mDatas.clear();
         }
         mDatasBackup = null;
@@ -126,9 +128,6 @@ public abstract class ExCommonAdapter<T> extends BaseAdapter {
 
 
     public abstract void convert(ExViewHolder holder, T bean);
-
-
-
 
     /*
      * click listener part

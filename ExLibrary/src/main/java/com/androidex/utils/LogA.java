@@ -12,22 +12,22 @@ public class LogA {
         return mIsDebug;
     }
 
-    public static void turnOn() {
+    public static void turnOnDebug() {
 
         mIsDebug = true;
     }
 
-    public static void turnOff() {
+    public static void turnOffDebug() {
 
         mIsDebug = false;
     }
 
-    public static void setMainTag(String tagName) {
+    public static void setLogTag(String tagName) {
 
         mMainTag = tagName;
     }
 
-    public static String getMainTag() {
+    public static String getLogTag() {
 
         return mMainTag;
     }
