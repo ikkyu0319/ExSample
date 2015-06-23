@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 
 /**
- *字符串帮助类
+ * 字符串帮助类
  */
 public class TextUtils {
 
@@ -24,6 +24,17 @@ public class TextUtils {
         else
             return false;
     }
+
+    /**
+     * 判断字符串不为空
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isNoEmpty(String str) {
+        return !isEmpty(str);
+    }
+
 
     /**
      * 判断str是否是数字组成的
@@ -50,7 +61,6 @@ public class TextUtils {
         Matcher m = p.matcher(email);
         return m.find();
     }
-
 
 
 }

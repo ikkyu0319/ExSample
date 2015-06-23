@@ -11,6 +11,12 @@ import java.util.List;
  */
 public class ShellUtil {
 
+
+    public static final String COMMAND_SU = "su";
+    public static final String COMMAND_SH = "sh";
+    public static final String COMMAND_EXIT = "exit\n";
+    public static final String COMMAND_LINE_END = "\n";
+
     /**
      * check whether has root permission
      */
@@ -125,11 +131,6 @@ public class ShellUtil {
             this.errorMsg = errorMsg;
         }
     }
-
-    public static final String COMMAND_SU = "su";
-    public static final String COMMAND_SH = "sh";
-    public static final String COMMAND_EXIT = "exit\n";
-    public static final String COMMAND_LINE_END = "\n";
 
 
 }
