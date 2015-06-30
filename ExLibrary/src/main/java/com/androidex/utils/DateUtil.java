@@ -1,6 +1,5 @@
 package com.androidex.utils;
 
-import android.annotation.SuppressLint;
 import android.text.format.DateFormat;
 
 import java.text.SimpleDateFormat;

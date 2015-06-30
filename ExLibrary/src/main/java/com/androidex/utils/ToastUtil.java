@@ -4,9 +4,12 @@ import android.widget.Toast;
 
 import com.androidex.context.ExApplication;
 
+/**
+ * Toast
+ */
 public class ToastUtil {
 
-	private static Toast mToast = Toast.makeText(ExApplication.getContext(), "", Toast.LENGTH_SHORT);
+	private static Toast mToast = Toast.makeText(ExApplication.getContext(), "", Toast.LENGTH_LONG);
 	
     public static void showToast(int rid)
     {

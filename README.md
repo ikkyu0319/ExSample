@@ -46,7 +46,7 @@ Json解析 ：
    * fastGson <https://github.com/alibaba/fastjson>
 
 数据库ORM：
-
+   * squidb <https://github.com/yahoo/squidb>
    * ormlite <http://ormlite.com/>
    * greenDAO <https://github.com/greenrobot/greenDAO>
 
