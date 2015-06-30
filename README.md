@@ -46,6 +46,7 @@ Json解析 ：
    * fastGson <https://github.com/alibaba/fastjson>
 
 数据库ORM：
+
    * squidb <https://github.com/yahoo/squidb>
    * ormlite <http://ormlite.com/>
    * greenDAO <https://github.com/greenrobot/greenDAO>
@@ -79,7 +80,7 @@ Json解析 ：
   * LeakCanary  <https://github.com/square/leakcanary/>
 
 
-##感谢组织和个人
+##伟大的组织和个人
 
   * Square  <http://square.github.io/> 
   * facebook <https://github.com/facebook>
@@ -108,7 +109,7 @@ CommonAdapter通用的Adapter <https://github.com/tianzhijiexian/CommonAdapter>
 
 自定义Dialog <https://github.com/orhanobut/dialogplus>
 
-![dialogPlus](https://github.com/nr4bt/dialogplus/raw/master/images/dialogplus.gif)
+![https://github.com/orhanobut/dialogplus/blob/master/art/dialogplus.gif)
 
 相册图片单选，多选模式 <https://github.com/wqandroid/wqgallery>
 
