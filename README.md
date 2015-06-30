@@ -109,7 +109,7 @@ CommonAdapter通用的Adapter <https://github.com/tianzhijiexian/CommonAdapter>
 
 自定义Dialog <https://github.com/orhanobut/dialogplus>
 
-![https://github.com/orhanobut/dialogplus/blob/master/art/dialogplus.gif)
+ ![Icon](https://github.com/orhanobut/dialogplus/blob/master/art/dialogplus.gif)
 
 相册图片单选，多选模式 <https://github.com/wqandroid/wqgallery>
 
