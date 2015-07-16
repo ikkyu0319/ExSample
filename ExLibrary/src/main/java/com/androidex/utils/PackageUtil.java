@@ -75,7 +75,7 @@ public class PackageUtil {
 
 
     /**
-     * 获取指定程序信息
+     * 获取前台显示程序信息
      */
     public static ActivityManager.RunningTaskInfo getTopRunningTask(Context context) {
         try {

@@ -1,4 +1,4 @@
-package com.androidex.adapter;
+package com.androidex.adapter.viewpager;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

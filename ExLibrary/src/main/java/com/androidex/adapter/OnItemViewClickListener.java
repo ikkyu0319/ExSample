@@ -2,7 +2,7 @@ package com.androidex.adapter;
 
 import android.view.View;
 
-public interface OnItemViewClickListener {
+public interface OnItemViewClickListener<T> {
 	
-	public void onViewClick(int position, View view);
+	public void onViewClick(int position,T t, View view);
 }

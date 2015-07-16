@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 
 /**
- * <!-- 手电筒 -->
+ * 闪光灯
  * Call requires API level 5
  * <uses-permission android:name="android.permission.FLASHLIGHT"/>
  * <uses-permission android:name="android.permission.CAMERA"/>

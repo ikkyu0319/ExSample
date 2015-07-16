@@ -1,6 +1,5 @@
 package com.androidex.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -36,7 +35,7 @@ public abstract class ExFragment extends Fragment {
 
         mFrameView.addView(view, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
                 FrameLayout.LayoutParams.MATCH_PARENT));
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         initData();
         initContentView();
@@ -54,11 +53,29 @@ public abstract class ExFragment extends Fragment {
 
     @Override public void onDestroyView() {
         super.onDestroy();
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 
     protected abstract void initData();
 
     protected abstract void initContentView();
+
+
+
+
+
+//    @Override public void onStart() {
+//        super.onStart();
+//        //注册EventBus
+//        EventBus.getDefault().register(this);
+//    }
+//
+//    @Override public void onStop() {
+//        super.onStop();
+//        //取消EventBus
+//        EventBus.getDefault().unregister(this);
+//    }
+
+
 
 }

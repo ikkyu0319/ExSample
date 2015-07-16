@@ -386,7 +386,7 @@ public class GsonUtil {
 
     public static boolean isEmpty(String inStr) {
         boolean reTag = false;
-        if (inStr == null || "".equals(inStr)) {
+        if (inStr == null || "".equals(inStr.trim())) {
             reTag = true;
         }
         return reTag;

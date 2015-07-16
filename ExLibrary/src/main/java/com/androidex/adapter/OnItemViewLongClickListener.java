@@ -2,7 +2,7 @@ package com.androidex.adapter;
 
 import android.view.View;
 
-public interface OnItemViewLongClickListener {
+public interface OnItemViewLongClickListener<T> {
 	
-	public void onViewLongClick(int position, View view);
+	public void onViewLongClick(int position,T t, View view);
 }

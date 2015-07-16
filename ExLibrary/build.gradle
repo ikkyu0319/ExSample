@@ -2,28 +2,37 @@ apply plugin: 'com.android.library'
 
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
-    compile 'com.android.support:support-annotations:22.2.0'
-    compile 'com.android.support:support-v4:22.2.0'
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'fr.baloomba:viewpagerindicator:2.4.2' // Viewpager指示器
+    compile 'com.android.support:support-v4:22.+'
+    compile 'com.android.support:appcompat-v7:22.+'
+    compile 'com.android.support:recyclerview-v7:22.+'
+    compile 'com.android.support:support-annotations:22.+'
+    compile 'com.android.support:design:22.+'
+
+
+    // Viewpager指示器
+    compile 'fr.baloomba:viewpagerindicator:2.4.2'
 
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'org.slf4j:slf4j-android:1.7.7'
-    compile 'com.j256.ormlite:ormlite-android:4.9'
-    compile 'com.jakewharton:butterknife:6.1.0'
-
+    //compile 'com.j256.ormlite:ormlite-android:4.9'
+    compile 'com.jakewharton:butterknife:7+'
     compile 'com.alibaba:fastjson:1.2.5'
     compile 'com.google.code.gson:gson:2.3'
-
     compile 'de.greenrobot:eventbus:2.4.0'
-    compile 'com.squareup.picasso:picasso:2.3.2'
-
-    compile 'dev.dworks.libs:volleyplus:+'//Volley+OkHttp
+    //Volley+OkHttp
+    compile 'dev.dworks.libs:volleyplus:+'
 
     //compile 'com.squareup:otto:1.3.5'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
+    //图片缓存
+    //compile 'com.squareup.picasso:picasso:2.3.2'
+    //compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.facebook.fresco:fresco:0.5.3+'
+
+    //Umeng
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
 
 }
 
@@ -37,6 +46,8 @@ android {
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
+
+
     }
     buildTypes {
 

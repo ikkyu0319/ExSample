@@ -26,7 +26,11 @@ public class SampleApplication extends Application {
         super.onTrimMemory(level);
     }
 
+
+
     @Override public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
+
+
 }

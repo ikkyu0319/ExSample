@@ -50,7 +50,6 @@ public class DateUtil {
   public static String getCurrentDetailTime24() {
     return getDetailTime24(System.currentTimeMillis());
   }
-
   /**
    * 获取自定义格式的日期
    *

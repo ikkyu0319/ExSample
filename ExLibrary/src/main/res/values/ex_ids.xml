@@ -3,4 +3,8 @@
     <item type="id" name="ex_decor_view_root"/>
     <item type="id" name="ex_decor_dialog_view_root"/>
     <item type="id" name="ex_decor_view_title"/>
+
+    <!--ViewHolder-->
+    <item type="id" name="tag_viewHolder"/>
+    <item type="id" name="tag_SparseArray"/>
 </resources>

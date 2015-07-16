@@ -2,7 +2,6 @@ package com.androidex.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -22,17 +21,17 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
 
     @Override public void setContentView(int layoutResId) {
         View view = getLayoutInflater().inflate(layoutResId, null);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         super.setContentView(view);
     }
 
     @Override public void setContentView(View view) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         super.setContentView(view);
     }
 
     @Override public void setContentView(View view, ViewGroup.LayoutParams params) {
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         super.setContentView(view, params);
     }
 
@@ -102,6 +101,17 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
         }
         transaction.commit();
         mCurrentFragment = f;
+    }
+
+
+
+
+    @Override protected void onStart() {
+        super.onStart();
+    }
+
+    @Override protected void onStop() {
+        super.onStop();
     }
 
 

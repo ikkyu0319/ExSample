@@ -11,6 +11,8 @@ import java.util.regex.Pattern;
 public class TextUtils {
 
 
+    public static String TEXT_EMPTY = "";
+
     /**
      * 判断字符串为空
      *

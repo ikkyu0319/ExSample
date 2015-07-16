@@ -58,10 +58,8 @@ public class ExDecorView extends RelativeLayout {
     private void initStyle(Style style) {
 
         if (style == null) {
-
             mStyle = new Style();
         } else {
-
             mStyle = style;
         }
     }
