@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author tom
  */
-public abstract class ExComMultipleRcvAdapter<T extends AdapterModel> extends RecyclerView.Adapter {
+public abstract class ExComMultipleRcvAdapter<T extends MultipleAdapterBean> extends RecyclerView.Adapter {
 
     private List<T> mData;
     private int mPosition;
@@ -54,18 +54,18 @@ public abstract class ExComMultipleRcvAdapter<T extends AdapterModel> extends Re
     }
 
     protected abstract
-    @NonNull AdapterItem<T> initItemView(Object type);
+    @NonNull MultipleAdapterItem<T> initItemView(Object type);
 
     // (type - item) = (key - value)
-    private HashMap<Object, AdapterItem<T>> mItemMap = new HashMap<>();
+    private HashMap<Object, MultipleAdapterItem<T>> mItemMap = new HashMap<>();
 
     /**
      * 根据相应的类型得到item对象
      *
      * @param type item的类型
      */
-    private AdapterItem<T> getItemByType(Object type) {
-        AdapterItem<T> item = mItemMap.get(type);
+    private MultipleAdapterItem<T> getItemByType(Object type) {
+        MultipleAdapterItem<T> item = mItemMap.get(type);
         if (item == null) {
             item = initItemView(type);
             mItemMap.put(type, item);
@@ -151,7 +151,7 @@ public abstract class ExComMultipleRcvAdapter<T extends AdapterModel> extends Re
 
     private class RcvAdapterItem extends RecyclerView.ViewHolder {
 
-        public RcvAdapterItem(Context context, AdapterItem item) {
+        public RcvAdapterItem(Context context, MultipleAdapterItem item) {
             super(LayoutInflater.from(context).inflate(item.getLayoutResId(), null));
         }
 
@@ -161,7 +161,7 @@ public abstract class ExComMultipleRcvAdapter<T extends AdapterModel> extends Re
          * @param model    数据对象
          * @param position 当前item的position
          */
-        public void setViews(AdapterItem<T> item, T model, int position) {
+        public void setViews(MultipleAdapterItem<T> item, T model, int position) {
             item.initViews(ExViewHolder.getInstance(itemView), model, position);
         }
     }

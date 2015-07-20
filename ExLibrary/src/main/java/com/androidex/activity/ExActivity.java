@@ -9,7 +9,6 @@ import butterknife.ButterKnife;
 public abstract class ExActivity extends Activity {
 
 
-    private boolean isEventBus = false;
 
     @Override public void setContentView(int layoutResId) {
         View view = getLayoutInflater().inflate(layoutResId, null);

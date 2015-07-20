@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author tom
  */
-public abstract class ExComMultipleLvAdapter<T extends AdapterModel> extends BaseAdapter {
+public abstract class ExComMultipleLvAdapter<T extends MultipleAdapterBean> extends BaseAdapter {
 
     private List<T> mData;
 
@@ -55,7 +55,7 @@ public abstract class ExComMultipleLvAdapter<T extends AdapterModel> extends Bas
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        AdapterItem<T> item = getItemByType(mData.get(position).getDataType());
+        MultipleAdapterItem<T> item = getItemByType(mData.get(position).getDataType());
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             convertView = inflater.inflate(item.getLayoutResId(), null);
@@ -65,9 +65,9 @@ public abstract class ExComMultipleLvAdapter<T extends AdapterModel> extends Bas
     }
 
     protected abstract
-    @NonNull AdapterItem<T> initItemView(Object type);
+    @NonNull MultipleAdapterItem<T> initItemView(Object type);
 
-    
+
     public List<T> getData() {
         return mData;
     }
@@ -129,15 +129,15 @@ public abstract class ExComMultipleLvAdapter<T extends AdapterModel> extends Bas
 
 
     // (type - item) = (key - value)
-    private HashMap<Object, AdapterItem<T>> mItemMap = new HashMap<>();
+    private HashMap<Object, MultipleAdapterItem<T>> mItemMap = new HashMap<>();
 
     /**
      * 根据相应的类型得到item对象
      *
      * @param type item的类型
      */
-    private AdapterItem<T> getItemByType(Object type) {
-        AdapterItem<T> item = mItemMap.get(type);
+    private MultipleAdapterItem<T> getItemByType(Object type) {
+        MultipleAdapterItem<T> item = mItemMap.get(type);
         if (item == null) {
             item = initItemView(type);
             mItemMap.put(type, item);

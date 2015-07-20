@@ -221,6 +221,7 @@ public class ExDecorView extends RelativeLayout {
         mLlTitleView.setBackgroundResource(resId);
     }
 
+    @Deprecated
     public void setTitleViewBackground(Drawable drawable) {
 
         mLlTitleView.setBackgroundDrawable(drawable);
