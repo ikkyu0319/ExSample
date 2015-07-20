@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+    </style>
+
+
+    <style name="DefaultTheme" parent="android:Theme.Material">
+        <!-- 允许使用transitions -->
+        <item name="android:windowContentTransitions">true</item>
+        <!-- 指定进入、退出、返回、重新进入时的transitions -->
+        <!--<item name="android:windowEnterTransition">@transition/explode</item>-->
+        <!--<item name="android:windowExitTransition">@transition/explode</item>-->
+        <!--<item name="android:windowReturnTransition">@transition/explode</item>-->
+        <!--<item name="android:windowReenterTransition">@transition/explode</item>-->
+        <!-- 指定进入、退出、返回、重新进入时的共享transitions -->
+        <!--<item name="android:windowSharedElementEnterTransition">@transition/change</item>-->
+        <!--<item name="android:windowSharedElementExitTransition">@transition/change</item>-->
+        <!--<item name="android:windowSharedElementReturnTransition">@transition/change</item>-->
+        <!--<item name="android:windowSharedElementReenterTransition">@transition/change</item>-->
+    </style>
+</resources>
