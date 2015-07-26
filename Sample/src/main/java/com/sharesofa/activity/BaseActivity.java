@@ -15,6 +15,7 @@ import com.androidex.activity.ExAppCompatActivity;
  */
 public abstract class BaseActivity<T> extends ExAppCompatActivity {
 
+
     private View mEmptyView;
     private View mConvertView;
 

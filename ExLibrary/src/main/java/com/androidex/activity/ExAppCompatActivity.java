@@ -7,6 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidex.volley.Request;
+import com.androidex.volley.RequestManager;
+
 import butterknife.ButterKnife;
 
 public abstract class ExAppCompatActivity extends AppCompatActivity {
@@ -14,6 +17,8 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
 
     private Fragment mCurrentFragment;
     private Toolbar mToolbar;
+
+    private boolean mIsFirstResume = false;
 
     /**
      * ++++++++++++++++++++++++++Toolbar part++++++++++++++++++++++++++
@@ -115,4 +120,42 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
     }
 
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!mIsFirstResume) {
+            mIsFirstResume = true;
+        } else {
+            onFirstResume();
+        }
+    }
+
+
+    protected void onFirstResume() {
+
+    }
+
+
+    public void addRequest(Request request) {
+        addRequest(request, this);
+    }
+
+
+    public void addRequest(Request request, Object tag) {
+        request.setTag(tag);
+        RequestManager.getInstance(this).addRequest(request);
+    }
+
+
+    public void cancelRequest(Request<?> request) {
+        RequestManager.getInstance(this).cancel(request);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        RequestManager.getInstance(this).cancelAll(this);
+        super.onDestroy();
+    }
 }

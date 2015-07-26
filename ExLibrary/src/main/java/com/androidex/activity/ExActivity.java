@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.androidex.volley.Request;
+import com.androidex.volley.RequestManager;
+
 import butterknife.ButterKnife;
 
 public abstract class ExActivity extends Activity {
 
-
+    private boolean mIsFirstResume = false;
 
     @Override public void setContentView(int layoutResId) {
         View view = getLayoutInflater().inflate(layoutResId, null);
@@ -36,4 +39,43 @@ public abstract class ExActivity extends Activity {
     }
 
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!mIsFirstResume) {
+            mIsFirstResume = true;
+        } else {
+            onFirstResume();
+        }
+    }
+
+
+    protected void onFirstResume() {
+
+
+    }
+
+
+    public void addRequest(Request request) {
+        addRequest(request, this);
+    }
+
+
+    public void addRequest(Request request, Object tag) {
+        request.setTag(tag);
+        RequestManager.getInstance(this).addRequest(request);
+    }
+
+
+    public void cancelRequest(Request<?> request) {
+        RequestManager.getInstance(this).cancel(request);
+    }
+
+
+    @Override
+    public void onDestroy() {
+        RequestManager.getInstance(this).cancelAll(this);
+        super.onDestroy();
+    }
 }

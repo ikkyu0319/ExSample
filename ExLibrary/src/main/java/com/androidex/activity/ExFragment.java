@@ -7,11 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.androidex.volley.Request;
+import com.androidex.volley.RequestManager;
+
 import butterknife.ButterKnife;
 
 
 public abstract class ExFragment extends Fragment {
 
+    private boolean mIsFirstResume = false;
     private FrameLayout mFrameView;
 
     @Override
@@ -62,7 +66,44 @@ public abstract class ExFragment extends Fragment {
 
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!mIsFirstResume) {
+            mIsFirstResume = true;
+        } else {
+            onFirstResume();
+        }
+    }
 
+
+    protected void onFirstResume() {
+
+
+    }
+
+
+    public void addRequest(Request request) {
+        addRequest(request, this);
+    }
+
+
+    public void addRequest(Request request, Object tag) {
+        request.setTag(tag);
+        RequestManager.getInstance(getActivity()).addRequest(request);
+    }
+
+
+    public void cancelRequest(Request<?> request) {
+        RequestManager.getInstance(getActivity()).cancel(request);
+    }
+
+
+    @Override
+    public void onDestroy() {
+        RequestManager.getInstance(getActivity()).cancelAll(this);
+        super.onDestroy();
+    }
 
 //    @Override public void onStart() {
 //        super.onStart();
