@@ -9,6 +9,10 @@ import com.androidex.volley.RequestManager;
 
 import butterknife.ButterKnife;
 
+/**
+ *
+ * ButterKnife+Volley
+ */
 public abstract class ExActivity extends Activity {
 
     private boolean mIsFirstResume = false;

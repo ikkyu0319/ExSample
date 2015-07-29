@@ -13,6 +13,11 @@ import com.androidex.volley.RequestManager;
 import butterknife.ButterKnife;
 
 
+/**
+ * Fragment
+ * <p>
+ * ButterKnife+Volley
+ */
 public abstract class ExFragment extends Fragment {
 
     private boolean mIsFirstResume = false;
@@ -65,7 +70,6 @@ public abstract class ExFragment extends Fragment {
     protected abstract void initContentView();
 
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -116,7 +120,6 @@ public abstract class ExFragment extends Fragment {
 //        //取消EventBus
 //        EventBus.getDefault().unregister(this);
 //    }
-
 
 
 }

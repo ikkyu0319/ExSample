@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--ExDecorView -->
     <item type="id" name="ex_decor_view_root"/>
     <item type="id" name="ex_decor_dialog_view_root"/>
     <item type="id" name="ex_decor_view_title"/>
@@ -7,4 +8,9 @@
     <!--ViewHolder-->
     <item type="id" name="tag_viewHolder"/>
     <item type="id" name="tag_SparseArray"/>
+
+    <!--Slidr -->
+    <item name="slidable_panel" type="id" />
+    <item name="slidable_content" type="id" />
+
 </resources>

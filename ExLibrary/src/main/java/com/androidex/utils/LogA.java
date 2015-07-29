@@ -2,6 +2,10 @@ package com.androidex.utils;
 
 import android.util.Log;
 
+
+/**
+ * Log打印
+ */
 public class LogA {
 
     private static String mMainTag = "ExLog:";

@@ -86,6 +86,7 @@ public class ExSharedPrefs {
      * @return 没有值的时候返回null
      */
     public Serializable getSerializable(String key) {
+
         String objBase64 = getString(key, "");
         if (TextUtils.isEmpty(objBase64))
             return null;

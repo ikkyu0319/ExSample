@@ -12,6 +12,12 @@ import com.androidex.volley.RequestManager;
 
 import butterknife.ButterKnife;
 
+
+/**
+ * ToolbarActivity
+ *
+ * ButterKnife+Volley
+ */
 public abstract class ExAppCompatActivity extends AppCompatActivity {
 
 
