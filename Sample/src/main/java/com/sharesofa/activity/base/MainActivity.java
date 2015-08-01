@@ -1,4 +1,4 @@
-package com.sharesofa;
+package com.sharesofa.activity.base;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.androidex.adapter.singletype.ExCommonLvAdapter;
 import com.androidex.adapter.singletype.ExCommonRcvAdapter;
 import com.androidex.adapter.singletype.ExViewHolder;
+import com.sharesofa.R;
 import com.sharesofa.bean.Users;
 
 import java.util.ArrayList;

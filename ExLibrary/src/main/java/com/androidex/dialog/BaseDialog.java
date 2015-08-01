@@ -1,4 +1,4 @@
-package com.sharesofa.dialog;
+package com.androidex.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -11,10 +11,11 @@ import android.view.ViewGroup;
 
 /**
  *
+ *
  */
 public class BaseDialog extends DialogFragment {
 
-
+    //TODO
     @NonNull @Override public Dialog onCreateDialog(Bundle savedInstanceState) {
         return super.onCreateDialog(savedInstanceState);
     }

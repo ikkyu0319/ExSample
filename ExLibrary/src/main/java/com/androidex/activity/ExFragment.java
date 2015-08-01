@@ -5,50 +5,41 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import com.androidex.volley.Request;
 import com.androidex.volley.RequestManager;
 
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 
 /**
  * Fragment
  * <p>
- * ButterKnife+Volley
+ * <p>
+ * ButterKnife+Volley+EventBus
  */
 public abstract class ExFragment extends Fragment {
 
     private boolean mIsFirstResume = false;
-    private FrameLayout mFrameView;
+    private View mRootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mFrameView = onCreateFragmentFrameView();
-        return mFrameView;
+        mRootView = inflater.inflate(setFragmentContentView(), container, false);
+
+        ButterKnife.bind(this, mRootView);
+        return mRootView;
     }
 
-    protected FrameLayout onCreateFragmentFrameView() {
 
-        return new FrameLayout(getActivity());
-    }
-
-    protected void setFragmentContentView(int layoutResId) {
-
-        setFragmentContentView(getActivity().getLayoutInflater().inflate(layoutResId, null));
-    }
-
-    protected void setFragmentContentView(View view) {
-
-        mFrameView.addView(view, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT));
-        ButterKnife.bind(this, view);
-
-        initData();
-        initContentView();
-    }
+    /**
+     * 子布局 XML
+     *
+     * @return
+     */
+    protected abstract int setFragmentContentView();
 
 
     @Override public void onHiddenChanged(boolean hidden) {
@@ -65,10 +56,6 @@ public abstract class ExFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    protected abstract void initData();
-
-    protected abstract void initContentView();
-
 
     @Override
     public void onResume() {
@@ -80,13 +67,31 @@ public abstract class ExFragment extends Fragment {
         }
     }
 
-
+    /**
+     * First onResume
+     */
     protected void onFirstResume() {
 
 
     }
 
 
+    @Override public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+        setHasOptionsMenu(true);
+    }
+
+    @Override public void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
+
+
+    /**
+     * Volley part
+     * @param request
+     */
     public void addRequest(Request request) {
         addRequest(request, this);
     }
@@ -108,18 +113,6 @@ public abstract class ExFragment extends Fragment {
         RequestManager.getInstance(getActivity()).cancelAll(this);
         super.onDestroy();
     }
-
-//    @Override public void onStart() {
-//        super.onStart();
-//        //注册EventBus
-//        EventBus.getDefault().register(this);
-//    }
-//
-//    @Override public void onStop() {
-//        super.onStop();
-//        //取消EventBus
-//        EventBus.getDefault().unregister(this);
-//    }
 
 
 }

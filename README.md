@@ -22,7 +22,7 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 通常View与Presenter是一对一的，但复杂的View可能绑定多个Presenter来处理逻辑 
 
 
-##采用框架
+## 参考优秀开源框架
 网络请求： 
 				
    * VolleyPlus <https://github.com/DWorkS/VolleyPlus> 
@@ -98,6 +98,8 @@ Json解析 ：
 
 ##优秀的参考引用框架
 
+
+RecyclerView made simple <https://github.com/lucasr/twoway-view>
 
 <https://github.com/chrisbanes/Android-PullToRefresh>
 
@@ -177,6 +179,8 @@ Airbnb提供的地图解决方案，支持多个本地地图提供者包括谷�
 
 
 
+MaterialSpinner  <https://github.com/ganfra/MaterialSpinner>
+![icon](https://github.com/ganfra/MaterialSpinner/blob/master/screenshots/screenshot.gif)
 
 
 

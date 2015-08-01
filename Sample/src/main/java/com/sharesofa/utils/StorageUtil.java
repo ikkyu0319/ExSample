@@ -11,6 +11,7 @@ import java.io.File;
 public class StorageUtil {
 
 	private static final String TAG = StorageUtil.class.getSimpleName();
+
 	private static String FILE_SCHEMA_PREFIX = "file://";
 
 	public static final String FILE_EXTEND_ZIP = ".zip";

@@ -11,6 +11,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -141,9 +142,35 @@ public class ExDecorView extends RelativeLayout {
         return mLlTitleRightView;
     }
 
-	/*
+
+    /**
+     * new add title view left part
+     *
+     * ImageButton
+     */
+    public ImageButton addTitleLeftImageButtonBack(OnClickListener lisn) {
+
+        return addTitleLeftImageButton(mStyle.mTitleBackIconResId, lisn);
+    }
+
+    public ImageButton addTitleLeftImageButton(int icResId, OnClickListener lisn) {
+
+        ImageButton iv = getTitleImageButton(icResId, lisn);
+        mLlTitleLeftView.addView(iv, getLinearLayoutParamsByTitleHeight());
+        return iv;
+    }
+
+    public ImageButton addTitleLeftImageButtonHoriWrap(int icResId, OnClickListener lisn) {
+
+        ImageButton iv = getTitleImageButton(icResId, lisn);
+        mLlTitleLeftView.addView(iv, getLinearHoriWrapLayoutParamsByTitleHeight(0));
+        return iv;
+    }
+
+
+    /**
      * add title view left part
-	 */
+     */
 
     public ImageView addTitleLeftImageViewBack(OnClickListener lisn) {
 
@@ -232,7 +259,7 @@ public class ExDecorView extends RelativeLayout {
         mLlTitleView.setBackgroundColor(color);
     }
 
-    /*
+    /**
      * add title view middle part
      */
     public ImageView addTitleMiddleImageView(int icResId) {
@@ -380,7 +407,29 @@ public class ExDecorView extends RelativeLayout {
         mLlTitleRightView.addView(v, lllp);
     }
 
-    /*
+
+    /**
+     * new add title view common part
+     */
+    private ImageButton getTitleImageButton(int icResId, OnClickListener lisn) {
+
+        ImageButton iv = new ImageButton(getContext());
+        iv.setScaleType(ScaleType.CENTER_INSIDE);// system default is scaleType.FIT_CENTER
+
+        if (icResId != 0)
+            iv.setImageResource(icResId);
+
+        if (mStyle.mTitleClickerBackgroundResId != 0)
+            iv.setBackgroundResource(mStyle.mTitleClickerBackgroundResId);
+
+        if (lisn != null)
+            iv.setOnClickListener(lisn);
+
+        return iv;
+    }
+
+
+    /**
      * title view common part
      */
     private ImageView getTitleImageView(int icResId, OnClickListener lisn) {

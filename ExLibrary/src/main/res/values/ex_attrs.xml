@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--ExDecorView 自定义属性 -->
     <declare-styleable name="ExDecorView">
         <attr name="exBackground" format="reference|color"/>
         <attr name="exTitleNone" format="boolean"/>
@@ -21,11 +22,13 @@
         <attr name="exTitleClickerHoriPadding" format="dimension"/>
     </declare-styleable>
 
+    <!--LinearListView 自定义属性 -->
     <declare-styleable name="LinearListView">
         <attr name="dividerDimension" format="dimension"/>
         <attr name="dividerDrawable" format="reference"/>
     </declare-styleable>
 
+    <!--RatingView 自定义属性 -->
     <declare-styleable name="RatingView">
         <attr name="rating" format="integer"/>
         <attr name="numStar" format="integer"/>
@@ -39,6 +42,7 @@
     </declare-styleable>
 
 
+    <!--Switch 自定义属性 -->
     <declare-styleable name="Switch">
         <attr name="sw_trackSize" format="reference|dimension"/>
         <attr name="sw_trackColor" format="reference|color"/>
@@ -56,7 +60,7 @@
         <attr name="android:checked"/>
     </declare-styleable>
 
-    <!--Volley-->
+    <!--Volley ImageView 自定义熟悉-->
     <attr name="default_image" format="reference" />
     <attr name="error_image" format="reference" />
     <attr name="animate_changes" format="boolean" />

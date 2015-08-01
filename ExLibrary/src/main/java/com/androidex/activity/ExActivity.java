@@ -8,10 +8,10 @@ import com.androidex.volley.Request;
 import com.androidex.volley.RequestManager;
 
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 /**
- *
- * ButterKnife+Volley
+ * ButterKnife+Volley+EventBus
  */
 public abstract class ExActivity extends Activity {
 
@@ -26,6 +26,7 @@ public abstract class ExActivity extends Activity {
     @Override public void setContentView(View view) {
         ButterKnife.bind(this, view);
         super.setContentView(view);
+
     }
 
     @Override public void setContentView(View view, ViewGroup.LayoutParams params) {
@@ -36,12 +37,13 @@ public abstract class ExActivity extends Activity {
 
     @Override protected void onStart() {
         super.onStart();
+        EventBus.getDefault().register(this);
     }
 
     @Override protected void onStop() {
+        EventBus.getDefault().unregister(this);
         super.onStop();
     }
-
 
 
     @Override
@@ -60,7 +62,10 @@ public abstract class ExActivity extends Activity {
 
     }
 
-
+    /**
+     * Volley Part
+     * @param request
+     */
     public void addRequest(Request request) {
         addRequest(request, this);
     }

@@ -11,12 +11,13 @@ import com.androidex.volley.Request;
 import com.androidex.volley.RequestManager;
 
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 
 /**
  * ToolbarActivity
- *
- * ButterKnife+Volley
+ * <p>
+ * ButterKnife+Volley+EventBus
  */
 public abstract class ExAppCompatActivity extends AppCompatActivity {
 
@@ -44,8 +45,12 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
     @Override public void setContentView(View view, ViewGroup.LayoutParams params) {
         ButterKnife.bind(this, view);
         super.setContentView(view, params);
-    }
 
+//        initData();
+//        initContentView();
+    }
+//    protected abstract void initData();
+//    protected abstract void initContentView();
 
     /**
      * ++++++++++++++++++++++++++fragment activity part++++++++++++++++++++++++++
@@ -115,16 +120,15 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override protected void onStart() {
         super.onStart();
+        EventBus.getDefault().register(this);
     }
 
     @Override protected void onStop() {
+        EventBus.getDefault().unregister(this);
         super.onStop();
     }
-
 
 
     @Override
@@ -143,6 +147,10 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Volley Part
+     * @param request
+     */
     public void addRequest(Request request) {
         addRequest(request, this);
     }

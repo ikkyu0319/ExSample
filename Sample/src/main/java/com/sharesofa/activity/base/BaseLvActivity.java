@@ -1,14 +1,14 @@
-package com.sharesofa.activity;
+package com.sharesofa.activity.base;
 
 import com.androidex.activity.ExAppCompatActivity;
 
 /**
- * 1.show WebView
+ * 1.show ListView
  * 2.show TripView(EmptyView&NetErrorView ..)
  *
  * @author tom
  */
-public class BaseWebViewActivity  extends ExAppCompatActivity {
+public abstract class BaseLvActivity extends ExAppCompatActivity {
 
 
 
