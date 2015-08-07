@@ -20,18 +20,26 @@ import com.facebook.common.internal.Supplier;
 import com.facebook.imagepipeline.backends.okhttp.OkHttpImagePipelineConfigFactory;
 import com.facebook.imagepipeline.cache.MemoryCacheParams;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
+import com.sharesofa.utils.StorageUtil;
 import com.squareup.okhttp.OkHttpClient;
 
 /**
- * Creates ImagePipeline configuration for the sample app
+ * fresco ImagePipeline 配置文件
+ * <p>
+ * setImageUri(必须是绝对路径)
+ * <p>
+ * <p>
+ * 远程图片                http://, https://        HttpURLConnection 或者参考 使用其他网络加载方案
+ * 本地文件                file://                  FileInputStream
+ * ContentProvider        content://               ContentResolver
+ * asset目录下的资源        asset://                 AssetManager
+ * res目录下的资源          res://                   Resources.openRawResource
  */
 public class ImagePipelineConfigFactory {
 
     private static final int MAX_HEAP_SIZE = (int) Runtime.getRuntime().maxMemory();
     private static final int MAX_DISK_CACHE_SIZE = 50 * 1024 * 1024; //M;
     private static final int MAX_MEMORY_CACHE_SIZE = MAX_HEAP_SIZE / 4;
-
-    private static final String IMAGE_PIPELINE_CACHE_DIR = "imagepipeline_cache";
 
 
     private static ImagePipelineConfig sImagePipelineConfig;
@@ -84,8 +92,8 @@ public class ImagePipelineConfigFactory {
                         })
                 .setMainDiskCacheConfig(
                         DiskCacheConfig.newBuilder()
-                                .setBaseDirectoryPath(context.getApplicationContext().getCacheDir())
-                                .setBaseDirectoryName(IMAGE_PIPELINE_CACHE_DIR)
+                                .setBaseDirectoryPath(StorageUtil.getHomeDir())
+                                .setBaseDirectoryName("pics")
                                 .setMaxCacheSize(MAX_DISK_CACHE_SIZE)
                                 .build());
     }

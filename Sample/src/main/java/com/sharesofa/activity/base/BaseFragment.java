@@ -17,8 +17,6 @@ import com.androidex.utils.ViewUtil;
 public abstract class BaseFragment extends ExFragment {
 
 
-
-
     /**
      * Umeng Event part
      */

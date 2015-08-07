@@ -60,7 +60,7 @@
         <attr name="android:checked"/>
     </declare-styleable>
 
-    <!--Volley ImageView 自定义熟悉-->
+    <!--Volley ImageView 自定义属性-->
     <attr name="default_image" format="reference" />
     <attr name="error_image" format="reference" />
     <attr name="animate_changes" format="boolean" />

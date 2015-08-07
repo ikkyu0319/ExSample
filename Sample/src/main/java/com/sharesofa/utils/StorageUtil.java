@@ -21,10 +21,10 @@ public class StorageUtil {
 	public static final String FILE_EXTEND_DLI = ".dli";
 
 
-	private static final String HOME_DIR = "/qyer/qyerplan/";// 大应用主目录
-	private static final String PICS_DIR = HOME_DIR + "pics/";// 应用所有网络图片保存目录
-	private static final String WEBVIEW_DIR = HOME_DIR+"webview_cache/"; //WebView缓存目录
-	private static final String PLAN_URL_CACHE=HOME_DIR+"urlCahe/";//PlanUrl缓存目录
+	public static final String HOME_DIR = "/ExApp/";// 大应用主目录
+	public static final String PICS_DIR = HOME_DIR + "pics/";// 应用所有网络图片保存目录
+	public static final String WEBVIEW_DIR = HOME_DIR+"webCahe/"; //WebView缓存目录
+	public static final String PLAN_URL_CACHE=HOME_DIR+"urlCahe/";//url缓存目录
 
 
 	public static File getExStorageDir() {
@@ -50,7 +50,6 @@ public class StorageUtil {
 
 		return picsDir;
 	}
-
 
 
 	public static File getUrlCaheFileDir() {

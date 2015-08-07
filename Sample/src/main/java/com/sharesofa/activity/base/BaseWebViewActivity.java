@@ -1,6 +1,6 @@
 package com.sharesofa.activity.base;
 
-import com.androidex.activity.ExAppCompatActivity;
+import com.androidex.activity.ExToolBarActivity;
 
 /**
  * 1.show WebView
@@ -8,7 +8,7 @@ import com.androidex.activity.ExAppCompatActivity;
  *
  * @author tom
  */
-public class BaseWebViewActivity  extends ExAppCompatActivity {
+public class BaseWebViewActivity  extends ExToolBarActivity {
 
 
 

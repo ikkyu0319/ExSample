@@ -2,64 +2,66 @@ package com.androidex.json;
 
 
 import com.androidex.utils.LogA;
+import com.androidex.utils.TextUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Iterator;
-
+import java.util.List;
 
 
 /**
  * @Description <br>
- * <p/>
+ * <p>
  * 使用方法：
  * 1，对象转json
  * String aStr = JsonUtils.toJson(A, false);
  * 参数1：具体对象(A代表任何对象,可以使集合类型也可以是普通类型)，
  * 参数2：是否转换只标注有@Expose的属性，比如说在A中有下列属性：
- * <p/>
+ * <p>
  * private String resultCode;
  * private String exception;
  * private String startTime;
  * ......get...
  * ......set...
- * <p/>
+ * <p>
  * 那么在做转换的时候只有属性exception才会被转换，并且不能为null(即使参数2设置为false,为null的属性也不做转换)
- *
- *
+ * <p>
+ * <p>
  * 2，json转对象
- *      A  a = JsonUtils.fromJson(aStr, A.calss);
- *      参数1是通过json转后的string，
- *      参数2：目标对象
- *
- *          注意：如果是把List转Json String，在取出的时候不能直接用foreach循环取出,平常我们可能就用如下方式就可以了
- *              ① for (Person person: personList) {
- *                  ②Student stu =   person.getStudent();
- *                 }
- *          而通过json转之后这样就不可以了，①会抛出java.util.LinkedHashMap cannot be cast to Person
- * <p/>
- *
- *
+ * A  a = JsonUtils.fromJson(aStr, A.calss);
+ * 参数1是通过json转后的string，
+ * 参数2：目标对象
+ * <p>
+ * 注意：如果是把List转Json String，在取出的时候不能直接用foreach循环取出,平常我们可能就用如下方式就可以了
+ * ① for (Person person: personList) {
+ * ②Student stu =   person.getStudent();
+ * }
+ * 而通过json转之后这样就不可以了，①会抛出java.util.LinkedHashMap cannot be cast to Person
+ * <p>
+ * <p>
+ * <p>
  * 可以采用如下方式
- *          List personList= JsonUtils.fromJson(str,List.class);
- *          str是List转为的string类型，上面有说怎么转。personList：我里面装的虽然是人，但要采用正确的方式把他们放出来，要不然就不是人了
- *            for (int i = 0; i < personList.size(); i++) {
- *                   ③请先把我转为String吧，要不然我就回不去了
- *                  String personStr = JsonUtils.toJson(personList.get(i), false);
- *                   ④ 哈哈，我可以变成人了
- *                   Person person= JsonUtils.fromJson(personStr ,Person.class);
- *                  ⑤good，还可以取到钱
- *                  Money money = person.getMoney()
- *                  ⑥:你醒醒吧⑤，像我这样才可以取到钱
- *                  String moneyStr = JsonUtils.toJson(person.getMoney());
- *                  ⑦有钱了\(0^◇^0)/
- *                  Money money = JsonUtils.fromJson(moneyStr , Money.class);
- *             ｝
- * <p/>
+ * List personList= JsonUtils.fromJson(str,List.class);
+ * str是List转为的string类型，上面有说怎么转。personList：我里面装的虽然是人，但要采用正确的方式把他们放出来，要不然就不是人了
+ * for (int i = 0; i < personList.size(); i++) {
+ * ③请先把我转为String吧，要不然我就回不去了
+ * String personStr = JsonUtils.toJson(personList.get(i), false);
+ * ④ 哈哈，我可以变成人了
+ * Person person= JsonUtils.fromJson(personStr ,Person.class);
+ * ⑤good，还可以取到钱
+ * Money money = person.getMoney()
+ * ⑥:你醒醒吧⑤，像我这样才可以取到钱
+ * String moneyStr = JsonUtils.toJson(person.getMoney());
+ * ⑦有钱了\(0^◇^0)/
+ * Money money = JsonUtils.fromJson(moneyStr , Money.class);
+ * ｝
+ * <p>
  * PS:对象中的int,Integer,Long long..等数字类型属性，通过json转回来时会多出 .0，
  */
 public class GsonUtil {
@@ -93,7 +95,7 @@ public class GsonUtil {
 
     /**
      * 将给定的目标对象根据指定的条件参数转换成 {@code JSON} 格式的字符串。
-     * <p/>
+     * <p>
      * <strong>该方法转换发生错误时，不会抛出任何异常。若发生错误时，曾通对象返回 <code>"{}"</code>； 集合或数组对象返回
      * <code>"[]"</code></strong>
      *
@@ -115,7 +117,7 @@ public class GsonUtil {
             builder.serializeNulls();
         if (version != null)
             builder.setVersion(version.doubleValue());
-        if (isEmpty(datePattern))
+        if (TextUtils.isEmpty(datePattern))
             datePattern = DEFAULT_DATE_PATTERN;
         builder.setDateFormat(datePattern);
         if (excludesFieldsWithoutExpose)
@@ -124,7 +126,7 @@ public class GsonUtil {
         Gson gson = builder.create();
         try {
             if (targetType != null) {
-                result = gson.toJson(target,targetType);
+                result = gson.toJson(target, targetType);
             } else {
                 result = gson.toJson(target);
             }
@@ -313,11 +315,11 @@ public class GsonUtil {
      */
     public static <T> T fromJson(String json, TypeToken<T> token,
                                  String datePattern) {
-        if (isEmpty(json)) {
+        if (TextUtils.isEmpty(json)) {
             return null;
         }
         GsonBuilder builder = new GsonBuilder();
-        if (isEmpty(datePattern)) {
+        if (TextUtils.isEmpty(datePattern)) {
             datePattern = DEFAULT_DATE_PATTERN;
         }
         Gson gson = builder.create();
@@ -325,7 +327,7 @@ public class GsonUtil {
             return gson.fromJson(json, token.getType());
         } catch (Exception ex) {
             LogA.e(json + " 无法转换为 " + token.getRawType().getName() + " 对象!",
-                   ex.toString());
+                    ex.toString());
             return null;
         }
     }
@@ -353,11 +355,11 @@ public class GsonUtil {
      * @return 给定的 {@code JSON} 字符串表示的指定的类型对象。
      */
     public static <T> T fromJson(String json, Class<T> clazz, String datePattern) {
-        if (isEmpty(json)) {
+        if (TextUtils.isEmpty(json)) {
             return null;
         }
         GsonBuilder builder = new GsonBuilder();
-        if (isEmpty(datePattern)) {
+        if (TextUtils.isEmpty(datePattern)) {
             datePattern = DEFAULT_DATE_PATTERN;
         }
         Gson gson = builder.create();
@@ -384,11 +386,20 @@ public class GsonUtil {
 
 
 
-    public static boolean isEmpty(String inStr) {
-        boolean reTag = false;
-        if (inStr == null || "".equals(inStr.trim())) {
-            reTag = true;
+    /**
+     * List<T>  ： BUG  :com.google.gson.internal.LinkedHashTreeMap cannot be cast to my object
+     * <br>
+     */
+    public static <T> List<T> getListFromJSON(String jsonString, Class zclass) {
+
+        List<T> list = new ArrayList<T>();
+        try {
+            Gson gson = new Gson();
+            list = gson.fromJson(jsonString, new ListOfJson<>(zclass));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return reTag;
+        return list;
     }
+
 }

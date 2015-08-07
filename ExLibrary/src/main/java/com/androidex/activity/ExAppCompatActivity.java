@@ -3,7 +3,6 @@ package com.androidex.activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -15,7 +14,7 @@ import de.greenrobot.event.EventBus;
 
 
 /**
- * ToolbarActivity
+ * ExAppCompatActivity  无Toolbar
  * <p>
  * ButterKnife+Volley+EventBus
  */
@@ -23,8 +22,6 @@ public abstract class ExAppCompatActivity extends AppCompatActivity {
 
 
     private Fragment mCurrentFragment;
-    private Toolbar mToolbar;
-
     private boolean mIsFirstResume = false;
 
     /**

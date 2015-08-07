@@ -4,7 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-
     <!--Volley PhotoView-->
     <dimen name="photo_crop_width">280dip</dimen>
     <dimen name="photo_crop_stroke_width">1dip</dimen>

@@ -1,6 +1,6 @@
 package com.sharesofa.activity.base;
 
-import com.androidex.activity.ExAppCompatActivity;
+import com.androidex.activity.ExToolBarActivity;
 
 /**
  * 1.show ListView
@@ -8,7 +8,7 @@ import com.androidex.activity.ExAppCompatActivity;
  *
  * @author tom
  */
-public abstract class BaseLvActivity extends ExAppCompatActivity {
+public abstract class BaseLvActivity extends ExToolBarActivity {
 
 
 

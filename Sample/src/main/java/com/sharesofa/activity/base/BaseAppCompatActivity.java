@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.androidex.activity.ExAppCompatActivity;
+import com.androidex.activity.ExToolBarActivity;
 import com.androidex.utils.ToastUtil;
 import com.androidex.utils.ViewUtil;
 
@@ -15,13 +15,13 @@ import com.androidex.utils.ViewUtil;
  *
  * @author tom
  */
-public class BaseAppCompatActivity extends ExAppCompatActivity {
+public class BaseAppCompatActivity extends ExToolBarActivity {
 
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
 
+    }
 
 
     /**
