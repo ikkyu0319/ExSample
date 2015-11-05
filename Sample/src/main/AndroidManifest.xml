@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.sharesofa"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.sharesofa"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:name=".SampleApplication"
+        android:name=".AppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.base.MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,10 +21,7 @@
     </application>
 
 
-
     <uses-permission android:name="android.permission.INTERNET"/>
-
-
 
 
 </manifest>

@@ -10,13 +10,16 @@ import com.sharesofa.config.ImagePipelineConfigFactory;
 /**
  * Created by tom on 15/5/16.
  */
-public class SampleApplication extends ExApplication {
+public class AppApplication extends ExApplication {
 
 
     @Override public void onCreate() {
         super.onCreate();
 
-        
+
+        /**
+         * Init Fresco
+         */
         Fresco.initialize(getContext(), ImagePipelineConfigFactory.getOkHttpImagePipelineConfig(this));
 
     }

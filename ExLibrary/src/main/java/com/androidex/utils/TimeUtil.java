@@ -8,6 +8,7 @@ import java.util.Date;
 
 /**
  * 时间工具类
+ *
  * @author tom
  */
 public class TimeUtil {
@@ -46,6 +47,7 @@ public class TimeUtil {
 
     /**
      * 日历转换成固定格式的形式返回yyyy年MM月dd日
+     *
      * @param calendar
      * @return
      */
@@ -61,11 +63,12 @@ public class TimeUtil {
 
     /**
      * 日历转换成固定格式的形式返回yyyy-MM-dd
+     *
      * @param calendar
      * @return
      */
-    public static String getTimeWithoutChinaToString(Calendar calendar){
-        if(calendar == null){
+    public static String getTimeWithoutChinaToString(Calendar calendar) {
+        if (calendar == null) {
             return TextUtils.TEXT_EMPTY;
         }
 
@@ -87,7 +90,7 @@ public class TimeUtil {
         }
 
         long time = endCalendar.getTimeInMillis() - startCalendar.getTimeInMillis();
-        int days = new Long(time / (1000 * 60 * 60 * 24)).intValue();
+        int days = new Long(time / day).intValue();
 
         return days;
     }
@@ -107,19 +110,20 @@ public class TimeUtil {
 
     /**
      * 返回 文字格式化（周中的天数）
+     *
      * @param timeMillis
      * @return
      */
-    public static String getDayWeek(long timeMillis){
+    public static String getDayWeek(long timeMillis) {
 
         long timeNowMillis = System.currentTimeMillis();
 
-        if( Math.abs(timeNowMillis-timeMillis) < day && timeMillis < timeNowMillis) {
+        if (Math.abs(timeNowMillis - timeMillis) < day && timeMillis < timeNowMillis) {
             return "今天";
         }
-        if( (timeMillis - timeNowMillis) < day && timeMillis > timeNowMillis){
+        if ((timeMillis - timeNowMillis) < day && timeMillis > timeNowMillis) {
             return "明天";
-        }else if((timeMillis - timeNowMillis) < day * 2  && timeMillis > timeNowMillis){
+        } else if ((timeMillis - timeNowMillis) < day * 2 && timeMillis > timeNowMillis) {
             return "后天";
         }
 

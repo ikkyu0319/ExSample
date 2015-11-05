@@ -21,6 +21,11 @@ View不直接与Model交互，而是通过与Presenter交互来与Model间接交
 Presenter与View的交互是通过接口来进行的，更有利于添加单元测试
 通常View与Presenter是一对一的，但复杂的View可能绑定多个Presenter来处理逻辑 
 
+##常用封装
+	
+	QQ空间，微信，微博，facebook分享；
+	支付宝，微信，paypal 支付；
+	
 
 ## 参考优秀开源框架
 网络请求： 
@@ -54,6 +59,7 @@ Json解析 ：
 事件发布，订阅：
 
    * EventBus <https://github.com/greenrobot/EventBus>
+   * AndroidEventBus
    * otto <http://square.github.io/otto/>
 
 动画：
@@ -99,6 +105,8 @@ Json解析 ：
 ##优秀的参考引用框架
 
 
+
+
 RecyclerView made simple <https://github.com/lucasr/twoway-view>
 
 <https://github.com/chrisbanes/Android-PullToRefresh>
@@ -108,6 +116,11 @@ RecyclerView made simple <https://github.com/lucasr/twoway-view>
 MVP模式 <https://github.com/richardradics/MVPAndroidBootstrap>
 
 CommonAdapter通用的Adapter <https://github.com/tianzhijiexian/CommonAdapter>
+
+
+
+自定义切换Loading，empty，error <https://github.com/vlonjatg/progress-activity>
+![icon]()
 
 自定义Dialog <https://github.com/orhanobut/dialogplus>
 
