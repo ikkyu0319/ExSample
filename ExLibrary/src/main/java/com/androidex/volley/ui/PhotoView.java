@@ -32,7 +32,6 @@ import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.view.ScaleGestureDetectorCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.FloatMath;
 import android.view.GestureDetector.OnDoubleTapListener;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
@@ -269,7 +268,7 @@ public class PhotoView extends NetworkImageView implements OnGestureListener,
         boolean handled = false;
         if (mDoubleTapToZoomEnabled && mTransformsEnabled && mDoubleTapOccurred) {
             if (!mDoubleTapDebounce) {
-                float currentScale = getScale();
+                float currentScale = (float)getScale();
                 float targetScale = currentScale * DOUBLE_TAP_SCALE_FACTOR;
 
                 // Ensure the target scale is within our bounds
@@ -336,7 +335,7 @@ public class PhotoView extends NetworkImageView implements OnGestureListener,
     public boolean onScale(ScaleGestureDetector detector) {
         if (mTransformsEnabled) {
             mIsDoubleTouch = false;
-            float currentScale = getScale();
+            float currentScale = (float)getScale();
             float newScale = currentScale * detector.getScaleFactor();
             scale(newScale, detector.getFocusX(), detector.getFocusY());
         }
@@ -876,7 +875,7 @@ public class PhotoView extends NetworkImageView implements OnGestureListener,
         if (dwidth < vwidth && dheight < vheight && !mAllowCrop) {
             mMinScale = 1.0f;
         } else {
-            mMinScale = getScale();
+            mMinScale = (float)getScale();
         }
         mMaxScale = Math.max(mMinScale * 8, 8);
     }
@@ -893,8 +892,8 @@ public class PhotoView extends NetworkImageView implements OnGestureListener,
      * <p>
      * NOTE: This method overwrites any values stored in {@link #mValues}.
      */
-    private float getScale() {
-        return FloatMath.sqrt((float) Math.pow(getValue(mMatrix, Matrix.MSCALE_X), 2) + (float) Math.pow(getValue(mMatrix, Matrix.MSKEW_Y), 2));
+    private double getScale() {
+        return Math.sqrt((float) Math.pow(getValue(mMatrix, Matrix.MSCALE_X), 2) + (float) Math.pow(getValue(mMatrix, Matrix.MSKEW_Y), 2));
     }
     
 
@@ -931,7 +930,7 @@ public class PhotoView extends NetworkImageView implements OnGestureListener,
         newScale = Math.max(newScale, mMinScale);
         newScale = Math.min(newScale, mMaxScale);
 
-        float currentScale = getScale();
+        float currentScale =(float)getScale();
         float factor = newScale / currentScale;
 
         // apply the scale factor

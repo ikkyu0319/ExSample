@@ -10,8 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
+ *TODO
  *
- *
+ * 单按钮
+ * 双按钮
+ * List（单选，多选）
+ * 自定义（输入框，日期）
  */
 public class BaseDialog extends DialogFragment {
 
