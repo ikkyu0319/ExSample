@@ -389,6 +389,7 @@ public class GsonUtil {
     /**
      * List<T>  ： BUG  :com.google.gson.internal.LinkedHashTreeMap cannot be cast to my object
      * <br>
+     *     use @see ListOfJson 解决
      */
     public static <T> List<T> getListFromJSON(String jsonString, Class zclass) {
 

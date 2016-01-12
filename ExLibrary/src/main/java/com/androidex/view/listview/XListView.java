@@ -29,7 +29,11 @@ import com.androidex.R;
  * XlistView
  * <p>
  * 可以自定义HeadView和FootView
+ * <p>
+ * <p>
+ * 更推荐使用RecycerView
  */
+@Deprecated
 public class XListView extends ListView implements OnScrollListener {
 
     private float mLastY = -1; // save event y

@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
  * <p>
  * ButterKnife+Volley+EventBus
  */
-public abstract class ExToolBarActivity extends ExAppCompatActivity {
+public abstract class ExToolBarActivity extends ExActivity {
 
 
     private Toolbar mToolbar;

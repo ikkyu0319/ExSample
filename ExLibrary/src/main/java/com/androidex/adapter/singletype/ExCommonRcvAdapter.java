@@ -55,7 +55,7 @@ public abstract class ExCommonRcvAdapter<T> extends RecyclerView.Adapter {
          */
         public void setViews(CommonRcvHolder holder, T model, int position) {
 
-            //TODO 未开发完毕
+            // TODO 未开发完毕
             fillData(holder, model, position);
         }
 

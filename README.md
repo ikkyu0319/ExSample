@@ -43,7 +43,8 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
    * Android-Universal-Image-Loader <https://github.com/nostra13/Android-Universal-Image-Loader>
    * RoundedImageView[圆角处理] <https://github.com/vinc3m1/RoundedImageView>
    * PhotoView[放大] <https://github.com/chrisbanes/PhotoView>
-
+   * 超大，超长图片的浏览 <https://github.com/davemorrissey/subsampling-scale-image-view>
+   * 图片加Tag标签 <https://github.com/saiwu-bigkoo/Android-PictureTagView>
 
 Json解析 ：
 

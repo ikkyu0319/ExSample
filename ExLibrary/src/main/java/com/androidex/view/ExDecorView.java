@@ -23,7 +23,10 @@ import com.androidex.R;
 
 /**
  * 自定义TitleBar，实现了title左中右的根布局
+ * <p>
+ * 推荐使用系统的toolbar
  */
+@Deprecated
 public class ExDecorView extends RelativeLayout {
 
     private LinearLayout mLlTitleView, mLlTitleLeftView, mLlTitleMiddleView, mLlTitleRightView;
@@ -145,7 +148,7 @@ public class ExDecorView extends RelativeLayout {
 
     /**
      * new add title view left part
-     *
+     * <p>
      * ImageButton
      */
     public ImageButton addTitleLeftImageButtonBack(OnClickListener lisn) {

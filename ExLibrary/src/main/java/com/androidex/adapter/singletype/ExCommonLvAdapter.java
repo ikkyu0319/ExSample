@@ -136,7 +136,6 @@ public abstract class ExCommonLvAdapter<T> extends BaseAdapter {
     /*
      * click listener part
 	 */
-
     public void setOnItemViewClickListener(OnItemViewClickListener lisn) {
 
         mOnItemViewClickLisn = lisn;
