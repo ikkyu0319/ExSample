@@ -6,13 +6,11 @@ def buildTime = new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone("G
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':ExLibrary')
-
-
 }
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "com.sharesofa"

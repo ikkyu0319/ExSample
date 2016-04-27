@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author tom
  */
-public class TimeUtil {
+public class TimeUtil extends DateUtil {
 
     public static int min = 1000 * 60;
     public static int hour = 1000 * 60 * 60;
@@ -126,8 +126,11 @@ public class TimeUtil {
         } else if ((timeMillis - timeNowMillis) < day * 2 && timeMillis > timeNowMillis) {
             return "后天";
         }
-
-        //TODO 昨天 前天
+//        else if (Math.abs(timeMillis - timeNowMillis) < day && (timeMillis < timeNowMillis)) {
+//            return "昨天";
+//        } else if (Math.abs(timeMillis - timeNowMillis) < day * 2 && timeMillis < timeNowMillis) {
+//            return "前天";
+//        }
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E");
         String date = simpleDateFormat.format(new Date(timeMillis));
@@ -135,5 +138,83 @@ public class TimeUtil {
         return date;
     }
 
+
+    /**
+     * 判断时间
+     *
+     * @param time 秒
+     * @return
+     */
+    public static String formatDateTime(long time) {
+
+        if (time == 0 || "".equals(time)) {
+            return "";
+        }
+        Date date = new Date(1000 * time);
+        SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT_DETAIL);
+        String datetime = format.format(date); //时间的 字符串
+
+        Calendar current = Calendar.getInstance();
+        Calendar today = Calendar.getInstance(); // 今天
+        today.set(Calendar.YEAR, current.get(Calendar.YEAR));
+        today.set(Calendar.MONTH, current.get(Calendar.MONTH));
+        today.set(Calendar.DAY_OF_MONTH, current.get(Calendar.DAY_OF_MONTH));
+        // Calendar.HOUR——12小时制的小时数 Calendar.HOUR_OF_DAY——24小时制的小时数
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        today.set(Calendar.MINUTE, 0);
+        today.set(Calendar.SECOND, 0);
+
+        Calendar yesterday = Calendar.getInstance(); // 昨天
+        yesterday.set(Calendar.YEAR, current.get(Calendar.YEAR));
+        yesterday.set(Calendar.MONTH, current.get(Calendar.MONTH));
+        yesterday.set(Calendar.DAY_OF_MONTH, current.get(Calendar.DAY_OF_MONTH) - 1);
+        yesterday.set(Calendar.HOUR_OF_DAY, 0);
+        yesterday.set(Calendar.MINUTE, 0);
+        yesterday.set(Calendar.SECOND, 0);
+
+        Calendar mintianday = Calendar.getInstance(); // 明天
+        mintianday.set(Calendar.YEAR, current.get(Calendar.YEAR));
+        mintianday.set(Calendar.MONTH, current.get(Calendar.MONTH));
+        mintianday.set(Calendar.DAY_OF_MONTH, current.get(Calendar.DAY_OF_MONTH) + 1);
+        mintianday.set(Calendar.HOUR_OF_DAY, 0);
+        mintianday.set(Calendar.MINUTE, 0);
+        mintianday.set(Calendar.SECOND, 0);
+
+        Calendar houtianday = Calendar.getInstance(); // 后天
+        houtianday.set(Calendar.YEAR, current.get(Calendar.YEAR));
+        houtianday.set(Calendar.MONTH, current.get(Calendar.MONTH));
+        houtianday.set(Calendar.DAY_OF_MONTH, current.get(Calendar.DAY_OF_MONTH) + 2);
+        houtianday.set(Calendar.HOUR_OF_DAY, 0);
+        houtianday.set(Calendar.MINUTE, 0);
+        houtianday.set(Calendar.SECOND, 0);
+
+        Calendar dahoutianday = Calendar.getInstance(); // 大后天
+        dahoutianday.set(Calendar.YEAR, current.get(Calendar.YEAR));
+        dahoutianday.set(Calendar.MONTH, current.get(Calendar.MONTH));
+        dahoutianday.set(Calendar.DAY_OF_MONTH, current.get(Calendar.DAY_OF_MONTH) + 3);
+        dahoutianday.set(Calendar.HOUR_OF_DAY, 0);
+        dahoutianday.set(Calendar.MINUTE, 0);
+        dahoutianday.set(Calendar.SECOND, 0);
+
+        current.setTime(date);
+
+        if (current.after(today) && current.before(mintianday)) {
+
+            return "今天 " + datetime.split(" ")[1];
+        } else if (current.before(today) && current.after(yesterday)) {
+
+            return "昨天 " + datetime.split(" ")[1];
+        } else if (current.after(mintianday) && current.before(houtianday)) {
+
+            return "明天 " + datetime.split(" ")[1];
+        } else if (current.after(houtianday) && current.before(dahoutianday)) {
+
+            return "后天 " + datetime.split(" ")[1];
+        } else {
+
+            int index = datetime.indexOf("-") + 1;
+            return datetime.substring(index, datetime.length());
+        }
+    }
 
 }
