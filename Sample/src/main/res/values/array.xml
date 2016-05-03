@@ -1,0 +1,12 @@
+<resources>
+
+    <string-array name="main_list">
+        <item>Image Sample</item>
+        <item>ListView Sample</item>
+        <item>RecyclerView Sample</item>
+        <item>Gson Sample</item>
+        <item>fastGson Sample</item>
+
+    </string-array>
+
+</resources>
