@@ -169,4 +169,9 @@ public abstract class ExActivity extends AppCompatActivity {
         RequestManager.getInstance(this).cancelAll(this);
         super.onDestroy();
     }
+
+    @Override public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+
+    }
 }

@@ -8,7 +8,7 @@ import com.androidex.activity.ExToolBarActivity;
  *
  * @author tom
  */
-public class BaseWebViewActivity  extends ExToolBarActivity {
+public class BaseWebViewActivity extends ExToolBarActivity {
 
 
 
