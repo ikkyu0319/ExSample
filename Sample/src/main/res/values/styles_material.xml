@@ -1,54 +1,11 @@
 <resources>
 
-    <style name="AppTheme" parent="AppTheme.Base"/>
-
-    <style name="AppTheme.NoneTranslucent" parent="AppTheme.Base">
-        <item name="android:windowIsTranslucent">false</item>
-    </style>
-    
-    <!--Theme.AppCompat.Light.DarkActionBar-->
-    <style name="AppTheme.Base" parent="android:Theme.Material.Light.DarkActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="colorPrimary">@color/green_100</item>
-        <item name="colorPrimaryDark">@color/green_500</item>
-        <item name="colorAccent">@color/green_900</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowContentOverlay">@android:color/transparent</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-    </style>
-
-    <!--  dialog theme   Theme.AppCompat.Light.Dialog -->
-    <style name="DialogTheme" parent="android:Theme.Material.Light.Dialog">
-        <!-- 边框 -->
-        <item name="android:windowFrame">@null</item>
-        <!-- 是否浮现在activity之上 -->
-        <item name="android:windowIsFloating">true</item>
-        <!-- 半透明 -->
-        <item name="android:windowIsTranslucent">false</item>
-        <!-- 背景透明 -->
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <!--Dialog 动画 -->
-        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-    </style>
+    <!--存放控件的 Style-->
 
 
-    <!--  dialog Activity theme -->
-    <style name="CustomDialogTheme"
-           parent="AppTheme.Base">
-
-        <!-- 边框 -->
-        <item name="android:windowFrame">@null</item>
-        <!-- 是否浮现在activity之上 -->
-        <item name="android:windowIsFloating">true</item>
-        <!-- 半透明 -->
-        <item name="android:windowIsTranslucent">false</item>
-        <!-- 背景透明 -->
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <!--Dialog 动画 -->
-        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-    </style>
+    <!--TextView-->
+    <!--Button-->
+    <!--ImageView-->
 
 
 </resources>

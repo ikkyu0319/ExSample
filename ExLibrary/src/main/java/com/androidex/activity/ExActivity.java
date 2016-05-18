@@ -9,8 +9,9 @@ import android.view.ViewGroup;
 import com.androidex.volley.Request;
 import com.androidex.volley.RequestManager;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
-import de.greenrobot.event.EventBus;
 
 
 /**

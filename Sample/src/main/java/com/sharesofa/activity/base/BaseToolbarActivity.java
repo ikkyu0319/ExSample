@@ -15,7 +15,7 @@ import com.androidex.utils.ViewUtil;
  *
  * @author tom
  */
-public class BaseAppCompatActivity extends ExToolBarActivity {
+public class BaseToolbarActivity extends ExToolBarActivity {
 
 
     @Override protected void onCreate(Bundle savedInstanceState) {

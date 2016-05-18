@@ -6,6 +6,7 @@ def buildTime = new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone("G
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':ExLibrary')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
 
 android {
@@ -28,7 +29,6 @@ android {
         disable 'GradleDependency'
         disable 'InvalidPackage'
     }
-
 
     signingConfigs {
         debug {
@@ -65,6 +65,9 @@ android {
 
     productFlavors {
         sofa {}
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
     }
 }
 
