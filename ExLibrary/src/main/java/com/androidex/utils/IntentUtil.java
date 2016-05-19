@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
+import android.widget.Toast;
 
 import java.io.File;
 
 /**
  * 常用启动项
- * <p/>
+ * <p>
  * 调用拨打电话。发送短信，打开浏览器，跳转地图
  */
 public class IntentUtil {
@@ -18,13 +19,23 @@ public class IntentUtil {
     /**
      * 调用应用市场
      */
-    public static void toAppStoreSearch(Activity activity) {
+    public static void toAppMarketActivity(Activity activity) {
 
         try {
             Intent intent = new Intent("android.intent.action.VIEW");
             intent.setData(Uri.parse("market://details?id=" + activity.getPackageName()));
-            intent.setComponent(new ComponentName("android", "com.android.internal.app.ResolverActivity"));
-            activity.startActivity(intent);
+            //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
+            if (intent.resolveActivity(activity.getPackageManager()) != null) { //可以接收
+                activity.startActivity(intent);
+            } else { //没有应用市场，我们通过浏览器跳转到Google Play
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + activity.getPackageName()));
+                //这里存在一个极端情况就是有些用户浏览器也没有，再判断一次
+                if (intent.resolveActivity(activity.getPackageManager()) != null) { //有浏览器
+                    activity.startActivity(intent);
+                } else { //
+                    Toast.makeText(activity, "天啊，您没安装应用市场，连浏览器也没有，您买个手机干啥？", Toast.LENGTH_SHORT).show();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -87,7 +98,7 @@ public class IntentUtil {
      * @param lat_end
      * @param lng_end
      */
-    public static void toPhoneMap(Activity activity, double lat_start, double lng_start, double lat_end, double lng_end) {
+    public static void toMap2Point(Activity activity, double lat_start, double lng_start, double lat_end, double lng_end) {
 
 
     }
