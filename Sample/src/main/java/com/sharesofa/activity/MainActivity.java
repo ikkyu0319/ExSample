@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import com.androidex.adapter.singletype.ExCommonLvAdapter;
 import com.androidex.adapter.singletype.ExCommonRcvAdapter;
-import com.androidex.adapter.singletype.ExViewHolder;
+import com.androidex.adapter.ExLvViewHolder;
 import com.sharesofa.R;
 import com.sharesofa.bean.Users;
 
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 
         if (mListView != null)
             mListView.setAdapter(new ExCommonLvAdapter<Users>(this, list, android.R.layout.simple_list_item_1) {
-                @Override public void convert(ExViewHolder holder, Users bean) {
+                @Override public void convert(ExLvViewHolder holder, Users bean) {
 
 
                 }

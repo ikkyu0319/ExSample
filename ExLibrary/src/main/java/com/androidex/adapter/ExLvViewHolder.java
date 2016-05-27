@@ -1,6 +1,7 @@
-package com.androidex.adapter.singletype;
+package com.androidex.adapter;
 
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.SparseArray;
 import android.view.View;
@@ -11,15 +12,16 @@ import com.androidex.R;
 
 /**
  * 通用 ViewHolder
+ *
  * @author Tom
  */
-public class ExViewHolder {
+public class ExLvViewHolder {
 
 
     private SparseArray<View> mViews;
     private View mConverView;
 
-    public ExViewHolder(View rootView) {
+    public ExLvViewHolder(View rootView) {
 
         this.mConverView = rootView;
         this.mViews = (SparseArray<View>) mConverView.getTag(R.id.tag_SparseArray);
@@ -30,10 +32,10 @@ public class ExViewHolder {
     }
 
 
-    public static ExViewHolder getInstance(View view) {
-        ExViewHolder instance = (ExViewHolder) view.getTag(R.id.tag_viewHolder);
+    public static ExLvViewHolder getInstance(View view) {
+        ExLvViewHolder instance = (ExLvViewHolder) view.getTag(R.id.tag_viewHolder);
         if (instance == null) {
-            instance = new ExViewHolder(view);
+            instance = new ExLvViewHolder(view);
             view.setTag(R.id.tag_viewHolder, instance);
         }
         return instance;
@@ -61,23 +63,26 @@ public class ExViewHolder {
         return mConverView;
     }
 
+    protected Context getContext() {
+        return mConverView.getContext();
+    }
 
     /**
      * ===================================以下设置常用控件赋值=======================
      */
-    public ExViewHolder setText(int viewId, String txt) {
+    public ExLvViewHolder setText(int viewId, String txt) {
         TextView tv = getView(viewId);
         tv.setText(txt);
         return this;
     }
 
-    public ExViewHolder setImageResource(int viewId, int resId) {
+    public ExLvViewHolder setImageResource(int viewId, int resId) {
         ImageView imageViewv = getView(viewId);
         imageViewv.setImageResource(resId);
         return this;
     }
 
-    public ExViewHolder setImageBitmap(int viewId, Bitmap bitmap) {
+    public ExLvViewHolder setImageBitmap(int viewId, Bitmap bitmap) {
         ImageView imageViewv = getView(viewId);
         imageViewv.setImageBitmap(bitmap);
         return this;

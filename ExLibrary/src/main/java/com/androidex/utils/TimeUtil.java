@@ -5,6 +5,7 @@ import android.text.format.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * 时间工具类
@@ -73,7 +74,7 @@ public class TimeUtil extends DateUtil {
         }
 
         Date date = calendar.getTime();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT_SIMPLE);
         return format.format(date);
     }
 
@@ -111,7 +112,7 @@ public class TimeUtil extends DateUtil {
     /**
      * 返回 文字格式化（周中的天数）
      *
-     * @param timeMillis
+     * @param timeMillis 秒
      * @return
      */
     public static String getDayWeek(long timeMillis) {
@@ -120,17 +121,13 @@ public class TimeUtil extends DateUtil {
 
         if (Math.abs(timeNowMillis - timeMillis) < day && timeMillis < timeNowMillis) {
             return "今天";
-        }
-        if ((timeMillis - timeNowMillis) < day && timeMillis > timeNowMillis) {
+        } else if ((timeMillis - timeNowMillis) < day && timeMillis > timeNowMillis) {
             return "明天";
         } else if ((timeMillis - timeNowMillis) < day * 2 && timeMillis > timeNowMillis) {
             return "后天";
+        } else if (Math.abs(timeMillis - timeNowMillis) < day && (timeMillis < timeNowMillis)) {
+            return "昨天";
         }
-//        else if (Math.abs(timeMillis - timeNowMillis) < day && (timeMillis < timeNowMillis)) {
-//            return "昨天";
-//        } else if (Math.abs(timeMillis - timeNowMillis) < day * 2 && timeMillis < timeNowMillis) {
-//            return "前天";
-//        }
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E");
         String date = simpleDateFormat.format(new Date(timeMillis));
@@ -216,5 +213,20 @@ public class TimeUtil extends DateUtil {
             return datetime.substring(index, datetime.length());
         }
     }
+
+
+    /**
+     * 返回周x [1-7]
+     *
+     * @param pTime Unix 时间戳
+     */
+    public static int getWeekInt(long pTime) {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeZone(TimeZone.getTimeZone("GMT+08:00"));
+        calendar.setTime(new Date(pTime * 1000));
+        return calendar.get(Calendar.DAY_OF_WEEK);
+    }
+
 
 }

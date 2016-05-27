@@ -2,7 +2,7 @@ package com.androidex.adapter.multipletype;
 
 import android.support.annotation.LayoutRes;
 
-import com.androidex.adapter.singletype.ExViewHolder;
+import com.androidex.adapter.ExLvViewHolder;
 
 
 /**
@@ -28,6 +28,6 @@ public interface MultipleAdapterItem<T extends MultipleAdapterBean> {
      * @param model    数据list内部的model
      * @param position 当前adapter调用item的位置
      */
-    public void initViews(ExViewHolder vh, T model, int position);
+    public void initViews(ExLvViewHolder vh, T model, int position);
 
 }  

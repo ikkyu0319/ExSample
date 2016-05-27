@@ -9,9 +9,10 @@ public interface MultipleAdapterBean {
 
     /**
      * 得到数据的类型数
+     *
      * @return 有多少种数据的类型（item的类型）
      */
-     int getDataTypeCount();
+    int getDataTypeCount();
 
     /**
      * 返回每种数据类型的标识.<br>

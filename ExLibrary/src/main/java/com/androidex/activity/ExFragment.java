@@ -2,6 +2,7 @@ package com.androidex.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,11 @@ import butterknife.ButterKnife;
 
 /**
  * Fragment
+ * <p>
+ * 1、add(), show(), hide(), replace()
+ * * * show()，hide()最终是让Fragment的View setVisibility(true还是false)，不会调用生命周期；
+ * * * replace()的话会销毁视图，即调用onDestoryView、onCreateView等一系列生命周期；
+ * <p>
  * <p>
  * <p>
  * ButterKnife+Volley+EventBus
@@ -89,8 +95,37 @@ public abstract class ExFragment extends Fragment {
     }
 
 
+    protected void addFragment(int frameId, Fragment f) {
+
+        if (f == null) return;
+        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+        getChildFragmentManager().beginTransaction().add(frameId, f).commit();
+    }
+
+    protected void addFragment(int frameId, Fragment f, String tag) {
+
+        if (f == null) return;
+
+        getChildFragmentManager().beginTransaction().add(frameId, f, tag).commit();
+    }
+
+    protected Fragment findFragmentByTag(String tag) {
+
+        if (tag == null) return null;
+
+        return getChildFragmentManager().findFragmentByTag(tag);
+    }
+
+    protected void replaceFragment(int frameId, Fragment f) {
+
+        if (f == null) return;
+
+        getChildFragmentManager().beginTransaction().replace(frameId, f);
+    }
+
     /**
      * Volley part
+     *
      * @param request
      */
     public void addRequest(Request request) {

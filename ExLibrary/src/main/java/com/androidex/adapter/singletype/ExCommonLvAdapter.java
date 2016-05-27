@@ -1,11 +1,13 @@
 package com.androidex.adapter.singletype;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.androidex.adapter.ExLvViewHolder;
 import com.androidex.adapter.OnItemViewClickListener;
 import com.androidex.adapter.OnItemViewLongClickListener;
 
@@ -26,7 +28,7 @@ public abstract class ExCommonLvAdapter<T> extends BaseAdapter {
     private OnItemViewLongClickListener mOnItemViewLongClickLisn;
 
 
-    public ExCommonLvAdapter(Context context, List<T> datas, int layoutId) {
+    public ExCommonLvAdapter(Context context, List<T> datas, @LayoutRes int layoutId) {
 
         this.mContext = context;
         this.mDatas = datas;
@@ -34,7 +36,7 @@ public abstract class ExCommonLvAdapter<T> extends BaseAdapter {
         this.mLayoutId = layoutId;
     }
 
-    public ExCommonLvAdapter(Context context, int layoutId) {
+    public ExCommonLvAdapter(Context context, @LayoutRes int layoutId) {
 
         this.mContext = context;
         mInflater = LayoutInflater.from(mContext);
@@ -123,7 +125,7 @@ public abstract class ExCommonLvAdapter<T> extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(mLayoutId, null);
         }
-        ExViewHolder holder = ExViewHolder.getInstance(convertView);
+        ExLvViewHolder holder = ExLvViewHolder.getInstance(convertView);
 
         convert(holder, getItem(position));
 
@@ -131,7 +133,7 @@ public abstract class ExCommonLvAdapter<T> extends BaseAdapter {
     }
 
 
-    public abstract void convert(ExViewHolder holder, T bean);
+    public abstract void convert(ExLvViewHolder holder, T bean);
 
     /*
      * click listener part

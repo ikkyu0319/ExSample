@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.androidex.adapter.singletype.ExViewHolder;
+import com.androidex.adapter.ExLvViewHolder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +60,7 @@ public abstract class ExComMultipleLvAdapter<T extends MultipleAdapterBean> exte
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             convertView = inflater.inflate(item.getLayoutResId(), null);
         }
-        item.initViews(ExViewHolder.getInstance(convertView), mData.get(position), position);
+        item.initViews(ExLvViewHolder.getInstance(convertView), mData.get(position), position);
         return convertView;
     }
 

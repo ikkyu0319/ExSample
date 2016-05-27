@@ -3,6 +3,7 @@ package com.androidex.activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -102,6 +103,27 @@ public abstract class ExActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(frameId, f);
     }
 
+    //移除fragment
+    protected void removeFragment() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            finish();
+        }
+    }
+
+    //返回键返回事件
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                finish();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     /**
      * 推荐使用
      */
@@ -147,6 +169,7 @@ public abstract class ExActivity extends AppCompatActivity {
 
     /**
      * Volley Part
+     *
      * @param request
      */
     public void addRequest(Request request) {

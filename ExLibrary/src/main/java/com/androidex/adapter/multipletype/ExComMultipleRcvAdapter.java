@@ -7,7 +7,7 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.androidex.adapter.singletype.ExViewHolder;
+import com.androidex.adapter.ExLvViewHolder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -162,7 +162,7 @@ public abstract class ExComMultipleRcvAdapter<T extends MultipleAdapterBean> ext
          * @param position 当前item的position
          */
         public void setViews(MultipleAdapterItem<T> item, T model, int position) {
-            item.initViews(ExViewHolder.getInstance(itemView), model, position);
+            item.initViews(ExLvViewHolder.getInstance(itemView), model, position);
         }
     }
 }
