@@ -10,7 +10,6 @@ import android.widget.PopupWindow;
  * 重新包装的PopWindow，可以使用，
  * 功能还有待继续完善
  *
- * @author yhb
  */
 public class ExPopWindow {
 

@@ -11,8 +11,8 @@ import com.androidex.utils.ViewUtil;
 
 /**
  * 内置ListView的popwindow
- * @author yhb
  *
+ * @see android.support.v7.widget.PopupMenu  更推荐使用PopupMenu
  */
 public class ExListPopWindow extends ExPopWindow {
 
