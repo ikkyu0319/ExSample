@@ -71,6 +71,11 @@ Json解析 ：
 
    * MultiThreadDownloader <https://github.com/AigeStudio/MultiThreadDownloader>
 
+热修福：
+   * RocooFix<https://github.com/dodola/RocooFix>
+   * 支付宝AndFix<https://github.com/alibaba/AndFix>
+   * 微信TinKer
+
 其它：
 
    * butterknife <http://jakewharton.github.io/butterknife/>
