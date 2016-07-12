@@ -6,6 +6,7 @@ def buildTime = new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone("G
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':ExLibrary')
+    compile project(path: ':ExLibrary')
 }
 
 android {
@@ -66,7 +67,6 @@ android {
         sofa {}
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
     }
 }
 

@@ -17,11 +17,12 @@ import android.content.Context;
 
 import com.facebook.cache.disk.DiskCacheConfig;
 import com.facebook.common.internal.Supplier;
-import com.facebook.imagepipeline.backends.okhttp.OkHttpImagePipelineConfigFactory;
+import com.facebook.imagepipeline.backends.okhttp3.OkHttpImagePipelineConfigFactory;
 import com.facebook.imagepipeline.cache.MemoryCacheParams;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.sharesofa.utils.StorageUtil;
-import com.squareup.okhttp.OkHttpClient;
+
+import okhttp3.OkHttpClient;
 
 /**
  * fresco ImagePipeline 配置文件
@@ -45,6 +46,7 @@ public class ImagePipelineConfigFactory {
     private static ImagePipelineConfig sImagePipelineConfig;
     private static ImagePipelineConfig sOkHttpImagePipelineConfig;
 
+    private static ImagePipelineConfigFactory setMainDiskCacheConfigFactory;
     /**
      * Creates config using android http stack as network backend.
      */
@@ -91,10 +93,40 @@ public class ImagePipelineConfigFactory {
                             }
                         })
                 .setMainDiskCacheConfig(
-                        DiskCacheConfig.newBuilder()
+                        DiskCacheConfig.newBuilder(context)
                                 .setBaseDirectoryPath(StorageUtil.getHomeDir())
                                 .setBaseDirectoryName("pics")
                                 .setMaxCacheSize(MAX_DISK_CACHE_SIZE)
                                 .build());
     }
+
+    /**
+     * 添加https认证
+     *
+     * @return
+     */
+//    private SSLSocketFactory getCertificates(Context context) {
+//        try {
+//
+//            InputStream inputStream = context.getAssets().open("https.cer");
+//            CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
+//
+//            KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+//            keyStore.load(null);
+//
+//            int index = 0;
+//            String certificateAlias = Integer.toString(index++);
+//            keyStore.setCertificateEntry(certificateAlias, certificateFactory.generateCertificate(inputStream));
+//
+//            SSLContext sslContext = SSLContext.getInstance("TLS");
+//            TrustManagerFactory trustManagerFactory =
+//                    TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+//            trustManagerFactory.init(keyStore);
+//            sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
+//            return sslContext.getSocketFactory();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }

@@ -24,10 +24,22 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 ##常用封装
 	
 	QQ空间，微信，微博，facebook分享；
-	支付宝，微信，paypal 支付；
+	支付宝，微信，paypal ,信用卡支付；
 	
 
 ## 参考优秀开源框架
+响应式编程:
+
+   * RxJava[RxJava文档中文版] <https://github.com/ReactiveX/RxJava>
+   * RxAndroid <https://github.com/ReactiveX/RxAndroid>
+
+   **[RxJava 文档中文版本](https://mcxiaoke.gitbooks.io/rxdocs/content/)**
+     
+   **[RxJava 与 Retrofit 结合的最佳实践](http://gank.io/post/56e80c2c677659311bed9841)**
+   
+   **[深入浅出 Retrofit，这么牛逼的框架你们还不来看看？](https://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=2653577186&idx=1&sn=1a5f6369faeb22b4b68ea39f25020d28&scene=1&srcid=0605oJ1NiiihvcW5jF8iy3n6&key=f5c31ae61525f82e38a1a943febc987278275256a5df936f1119c6514ebc78df82fc229de80607e2372e4c0f1451e4db&ascene=0&uin=Mjc3OTU3Nzk1&devicetype=iMac+MacBookPro10%2C1+OSX+OSX+10.10.5+build%2814F1808%29&version=11020201&pass_ticket=Yfzg8hN3fuLjjXoQDSG%2BBKWgRxryyVOFVwGFzsu7nB%2FgSZp9gdXJS%2FudxKZSNLan)**
+
+
 网络请求： 
 				
    * VolleyPlus <https://github.com/DWorkS/VolleyPlus> 
@@ -72,6 +84,7 @@ Json解析 ：
    * MultiThreadDownloader <https://github.com/AigeStudio/MultiThreadDownloader>
 
 热修福：
+
    * RocooFix<https://github.com/dodola/RocooFix>
    * 支付宝AndFix<https://github.com/alibaba/AndFix>
    * 微信TinKer
@@ -87,9 +100,10 @@ Json解析 ：
 
 
 
-##异常捕获&性能分析
+##异常捕获&性能分析&测试
 
   * LeakCanary  <https://github.com/square/leakcanary/>
+  * infe <https://github.com/facebook/infer>
 
 
 ##伟大的组织和个人
