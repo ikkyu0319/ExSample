@@ -32,8 +32,9 @@ Presenter与View的交互是通过接口来进行的，更有利于添加单元�
 
    * RxJava[RxJava文档中文版] <https://github.com/ReactiveX/RxJava>
    * RxAndroid <https://github.com/ReactiveX/RxAndroid>
+   * Google agera <https://github.com/google/agera>
 
-   **[RxJava 文档中文版本](https://mcxiaoke.gitbooks.io/rxdocs/content/)**
+     **[RxJava 文档中文版本](https://mcxiaoke.gitbooks.io/rxdocs/content/)**
      
    **[RxJava 与 Retrofit 结合的最佳实践](http://gank.io/post/56e80c2c677659311bed9841)**
    
@@ -76,18 +77,27 @@ Json解析 ：
    * otto <http://square.github.io/otto/>
 
 动画：
-  
+
+   * Facebook rebound <https://github.com/facebook/rebound>
    * NineOldAndroids <http://nineoldandroids.com/>
 
 多点下载：
 
    * MultiThreadDownloader <https://github.com/AigeStudio/MultiThreadDownloader>
 
-热修福：
-
+插件化&热修复:
+   
+   * 微信TinKer
+   * react-native <https://github.com/facebook/react-native>
    * RocooFix<https://github.com/dodola/RocooFix>
    * 支付宝AndFix<https://github.com/alibaba/AndFix>
-   * 微信TinKer
+   * Small <https://github.com/wequick/Small>
+   * DroidPlugin <https://github.com/DroidPluginTeam/DroidPlugin>
+
+高性能数据传递：
+
+* FlatBuffers <https://google.github.io/flatbuffers/>
+* thrift  <https://github.com/apache/thrift>
 
 其它：
 
@@ -95,8 +105,7 @@ Json解析 ：
    * dagger2.0 <https://github.com/google/dagger/>
    * ViewPagerIndicator <http://viewpagerindicator.com/>
    * Android-PullToRefresh <https://github.com/chrisbanes/Android-PullToRefresh>
-
-
+   *  v3-utility-library <https://github.com/googlemaps/v3-utility-library>
 
 
 
@@ -124,7 +133,7 @@ Json解析 ：
 
 ##优秀的参考引用框架
 
-
+其它Demo集合 <https://github.com/Tim9Liu9/TimLiu-Android> 
 
 
 RecyclerView made simple <https://github.com/lucasr/twoway-view>
