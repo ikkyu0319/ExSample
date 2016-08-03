@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- *TODO
- *
+ * TODO
+ * <p>
  * 单按钮
  * 双按钮
  * List（单选，多选）
@@ -19,7 +19,6 @@ import android.view.ViewGroup;
  */
 public class BaseDialog extends DialogFragment {
 
-    //TODO
     @NonNull @Override public Dialog onCreateDialog(Bundle savedInstanceState) {
         return super.onCreateDialog(savedInstanceState);
     }
