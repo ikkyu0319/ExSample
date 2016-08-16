@@ -17,3 +17,14 @@ allprojects {
         jcenter()
     }
 }
+
+
+ext {
+    compileSdkVersion = 23 //基于哪个SDK编译，这里是API LEVEL
+    buildToolsVersion = '23.0.3' //基于哪个构建工具版本进行构建的。
+    targetSdkVersion = 23
+    minSdkVersion = 21 //5.0 +
+
+    versionCode = 1
+    versionName = "1.0"
+}
