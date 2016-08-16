@@ -9,6 +9,7 @@ public class VersionUtils {
     private VersionUtils() {
     }
 
+
     /**
      * Renderscript >=18
      */
@@ -17,47 +18,47 @@ public class VersionUtils {
     }
 
     /**
-     * 4.1
+     * 4.1 JELLY_BEAN
      */
     public static boolean isJellyBean() {
         return android.os.Build.VERSION.SDK_INT == 16;
     }
 
     /**
-     * >=4.2
+     * >=4.2 JELLY_BEAN_MR1
      */
     public static boolean isAtLeastJellyBeanMR1() {
         return android.os.Build.VERSION.SDK_INT >= 17;
     }
     /**
-     * >=4.3
+     * >=4.3 JELLY_BEAN_MR2
      */
     public static boolean isAtLeastJellyBeanMR2() {
         return android.os.Build.VERSION.SDK_INT >= 18;
     }
 
     /**
-     * >=4.4
+     * >=4.4  KITKAT
      */
     public static boolean isAtLeastKitKat() {
         return android.os.Build.VERSION.SDK_INT >= 19;
     }
 
     /**
-     * >=5.0
+     * >=5.0 LOLLIPOP & L
      */
     public static boolean isAtLeastLollipop() {
         return android.os.Build.VERSION.SDK_INT >= 21;
     }
     /**
-     * >=5.1
+     * >=5.1 LOLLIPOP_MR1
      */
     public static boolean isAtLeastLollipopMR1() {
         return android.os.Build.VERSION.SDK_INT >= 22;
     }
 
     /**
-     * >=6.0
+     * >=6.0  M
      */
     public static boolean isAtLeastMarshmallow() {
         return android.os.Build.VERSION.SDK_INT >= 23;
