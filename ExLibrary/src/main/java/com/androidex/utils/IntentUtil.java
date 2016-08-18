@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import java.io.File;
@@ -15,6 +16,8 @@ import java.io.File;
  */
 public class IntentUtil {
 
+    // Map 相关参数
+    private static String MAP_URL = "https://ditu.google.cn/maps?hl=zh&mrt=loc&";
 
     /**
      * 调用应用市场
@@ -69,6 +72,9 @@ public class IntentUtil {
      */
     public static void toPhoneWebBrowser(Activity activity, String url) {
 
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        activity.startActivity(intent);
     }
 
     /**
@@ -92,15 +98,50 @@ public class IntentUtil {
     /**
      * 地图 两点直接连线
      *
-     * @param activity
-     * @param lat_start
-     * @param lng_start
-     * @param lat_end
-     * @param lng_end
+     * @param act
+     * @param slat
+     * @param slng
+     * @param elat
+     * @param elng
      */
-    public static void toMap2Point(Activity activity, double lat_start, double lng_start, double lat_end, double lng_end) {
+    public static void startGoogleMapAppShowRoute(Activity act, double slat, double slng, double elat, double elng) {
+
+        String url = MAP_URL + "saddr=" + slat + "," + slng + "&daddr=" + elat + "," + elng;
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK & Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        i.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+        act.startActivity(i);
+    }
+
+    /**
+     * 地图 两点直接连线 Web
+     *
+     * @param act
+     * @param slat
+     * @param slng
+     * @param elat
+     * @param elng
+     */
+    public static void startGoogleMapWebShowRoute(Activity act, double slat, double slng, double elat, double elng) {
+
+        String url = MAP_URL + "saddr=" + slat + "," + slng + "&daddr=" + elat + "," + elng;
+        try {
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            act.startActivity(i);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
+    /**
+     * to应用详情页
+     */
+    public static void toAppDetail(Activity activity, String strPackageName) {
+
+        Uri uri = Uri.fromParts("package", strPackageName, null);
+        Intent it = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, uri);
+        activity.startActivity(it);
     }
 
     /**
