@@ -12,7 +12,6 @@ import com.androidex.volley.RequestManager;
 
 import org.greenrobot.eventbus.EventBus;
 
-import butterknife.ButterKnife;
 
 
 /**
@@ -36,7 +35,7 @@ public abstract class ExFragment extends Fragment {
 
         mRootView = inflater.inflate(setFragmentContentView(), container, false);
 
-        ButterKnife.bind(this, mRootView);
+
         return mRootView;
     }
 
@@ -60,7 +59,6 @@ public abstract class ExFragment extends Fragment {
 
     @Override public void onDestroyView() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
 
