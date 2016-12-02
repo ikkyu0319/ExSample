@@ -93,11 +93,19 @@ Json解析 ：
    * 支付宝AndFix<https://github.com/alibaba/AndFix>
    * Small <https://github.com/wequick/Small>
    * DroidPlugin <https://github.com/DroidPluginTeam/DroidPlugin>
+   * 百阅方案
+   * 饿了么方案
 
 高性能数据传递：
 
 * FlatBuffers <https://google.github.io/flatbuffers/>
 * thrift  <https://github.com/apache/thrift>
+
+视频，图片滤镜处理：
+
+* android-gpuimage <https://github.com/CyberAgent/android-gpuimage/>
+* Grafika  <https://github.com/google/grafika>
+* CameraFilter  <https://github.com/ongakuer/CameraFilter>
 
 其它：
 
@@ -117,11 +125,15 @@ Json解析 ：
 
 ##伟大的组织和个人
 
+  * google <https://github.com/google>
   * Square  <http://square.github.io/> 
   * facebook <https://github.com/facebook>
   * JakeWharton <https://github.com/JakeWharton> 
   * greenrobot <https://github.com/greenrobot>
   * Yalantis <https://github.com/Yalantis>
+  * alibaba <https://github.com/alibaba>
+  * Tencent  <https://github.com/Tencent>
+
 		
 
 
